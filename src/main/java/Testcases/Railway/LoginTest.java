@@ -14,7 +14,7 @@ public class LoginTest {
 
     @BeforeClass
     public void beforeClass() {
-        System.setProperty("webdriver.chrome.driver", "src/main/java/Executables/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/Webdriver/Executables/chromedriver.exe");
         Constant.WEBDRIVER = new ChromeDriver();
         Constant.WEBDRIVER.manage().window().maximize();
         // E:\JavaCoBan\SeleniumLevel-1\src\main
