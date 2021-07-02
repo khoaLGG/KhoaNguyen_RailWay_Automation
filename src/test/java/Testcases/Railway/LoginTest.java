@@ -29,23 +29,21 @@ public class LoginTest {
     public void beforeMethod() {
         System.out.println("Pre-condition");
         homePage.open();
+        homePage.gotoLoginPage();
     }
 
     @AfterMethod
     public void afterMethod() {
         System.out.println("Post-condition");
-        if (homePage.isLoggedIn()) {
-            homePage.logout();
-        }
+        homePage.logout();
     }
 
-    @Test
+    @Test(description = "TC01 - User can log into Railway with valid username and password")
     public void TC01() {
-        System.out.println("TC01 - User can log into Railway with valid username and password");
-        homePage.gotoLoginPage();
+        //System.out.println("TC01 - User can log into Railway with valid username and password");
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         String actualMsg = homePage.getWelcomeMessage();
-        String expectedMsg = "Welcome " + Constant.USERNAME;
+        String expectedMsg = String.format(Constant.MSG_WELCOME_USER, Constant.USERNAME);
         Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");
         /*if (actualMsg.contentEquals(expectedMsg)) {
             System.out.println("Test Passed!");
@@ -54,13 +52,12 @@ public class LoginTest {
         }*/
     }
 
-    @Test
+    @Test(description = "TC02_User can't login with blank Username textbox")
     public void TC02() {
-        System.out.println("TC02_User can't login with blank Username textbox");
-        homePage.gotoLoginPage();
+        //System.out.println("TC02_User can't login with blank Username textbox");
         loginPage.login("", Constant.PASSWORD);
-        String actualMsg = homePage.getErrorMsg();
-        String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
+        String actualMsg = loginPage.getErrorMsg();
+        String expectedMsg = Constant.MSG_PROBLEM_WITH_LOGIN;
         Assert.assertEquals(actualMsg, expectedMsg, "error message is not displayed as expected");
         //String errorMsg = loginPage1.getErrorMsg();
         //System.out.println(errorMsg);
@@ -78,25 +75,22 @@ public class LoginTest {
         /*Assert.assertTrue(loginPage.isusernametbblank(), "Test Failed");*/
     }
 
-    @Test
+    @Test(description = "TC03_User cannot log into Railway with invalid password ")
     public void TC03() {
-        System.out.println("TC03_User cannot log into Railway with invalid password ");
-        homePage.gotoLoginPage();
+       // System.out.println("TC03_User cannot log into Railway with invalid password ");
         loginPage.login(Constant.USERNAME, "1");
         String actualMsg = homePage.getErrorMsg();
         System.out.println(actualMsg);
-        String expectedMsg = "There was a problem with your login and/or errors exist in your form.";
+        String expectedMsg = Constant.MSG_INVALID_USERNAME_PASSWORD;
         Assert.assertEquals(actualMsg, expectedMsg, "error message not displayed as expected");
     }
 
-    @Test
+    @Test(description = "TC05_System shows message when user enters wrong password several times")
     public void TC05() {
-        System.out.println("TC05_System shows message when user enters wrong password several times");
-        homePage.gotoLoginPage();
+       //System.out.println("TC05_System shows message when user enters wrong password several times");
         loginPage.numberOfLogins(4);
         String actualMsg = homePage.getErrorMsg();
-        String expectedMsg = "You have used 4 out of 5 login attempts. " +
-                "After all 5 have been used, you will be unable to login for 15 minutes.";
+        String expectedMsg = Constant.MSG_RUN_OUT_OF_TRY_LOGIN;
         Assert.assertEquals(actualMsg, expectedMsg, "error message not displayed as expected");
     }
 

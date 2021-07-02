@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class LoginPage extends GeneralPage {
+
+    private final String loginPageTitle = "Login Page";
+
     // Locators
     private final By _txtUsername = By.xpath("//input[@id='username']");
     private final By _txtPassword = By.xpath("//input[@id='password']");
@@ -16,23 +19,23 @@ public class LoginPage extends GeneralPage {
     private final By _errorMsg = By.xpath("//p[contains(.,'There was a problem with your login and/or errors exist in your form.')]");
 
     // Elements
-    public WebElement getTxtUsername() {
+    public WebElement getUsername() {
         return Constant.WEBDRIVER.findElement(_txtUsername);
     }
 
-    public WebElement getTxtPassword() {
+    public WebElement getPassword() {
         return Constant.WEBDRIVER.findElement(_txtPassword);
     }
 
-    public WebElement getLblNameLoginPage() {
+    public WebElement getNameLoginPage() {
         return Constant.WEBDRIVER.findElement(_lblNameLoginPage);
     }
 
-    public WebElement getBtnLogin() {
+    public WebElement getLogin() {
         return Constant.WEBDRIVER.findElement(_btnLogin);
     }
 
-    public WebElement getBtnLogout() {
+    public WebElement getLogout() {
         return Constant.WEBDRIVER.findElement(_btnLogout);
     }
 
@@ -42,8 +45,13 @@ public class LoginPage extends GeneralPage {
 
 
     // Methods
-    public String getNameLoginPage() {
-        return this.getLblNameLoginPage().getText();
+
+    public boolean isAt(){
+        return getNameLoginPage().equals(loginPageTitle);
+    }
+
+    public String getNameOfLoginPage() {
+        return this.getNameLoginPage().getText();
     }
 
     public Boolean isMsgDisplayed() {
@@ -52,7 +60,7 @@ public class LoginPage extends GeneralPage {
 
     public boolean verifyLoginPagedIsDisplayed() {
         boolean flag = false;
-        if (Constant.WEBDRIVER.findElement(By.xpath("//div[@id='content']/h1")).isDisplayed()) {
+        if (Constant.WEBDRIVER.findElement(_lblNameLoginPage).isDisplayed()) {
             //Assert.assertEquals(actualMsg, expectedMsg, "don't navigate login page");
             return flag = true;
         }
@@ -63,15 +71,15 @@ public class LoginPage extends GeneralPage {
         LoginPage loginPage = new LoginPage();
         int count = 1;
         while (count < i) {
-            loginPage.login(Constant.USERNAME, "1");
+            loginPage.login(Constant.USERNAME, Constant.INVALID_PASSWORD);
             count = count + 1;
         }
     }
 
     public HomePage login(String username, String password) {
-        this.getTxtUsername().sendKeys(username);
-        this.getTxtPassword().sendKeys(password);
-        this.getBtnLogin().click();
+        this.getUsername().sendKeys(username);
+        this.getPassword().sendKeys(password);
+        this.getLogin().click();
 
         return new HomePage();
     }
@@ -81,7 +89,7 @@ public class LoginPage extends GeneralPage {
     }
 
     public void logout() {
-        this.getBtnLogout().click();
+        this.getLogout().click();
     }
 
 }

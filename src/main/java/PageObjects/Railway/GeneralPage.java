@@ -4,7 +4,10 @@ import Common.Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+
 public class GeneralPage {
+
+
 
     // Locators
     private final By tabLogin = By.xpath("//div[@id='menu']//a[@href='/Account/Login.cshtml']");
@@ -52,7 +55,9 @@ public class GeneralPage {
     }
 
     public void logout() {
-        this.getTabLogout().click();
+        if (this.isLoggedIn()) {
+                this.getTabLogout().click();
+        }
     }
 
     public void gotoBookTicket() {

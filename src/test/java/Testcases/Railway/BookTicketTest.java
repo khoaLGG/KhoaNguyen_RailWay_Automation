@@ -16,7 +16,7 @@ public class BookTicketTest {
 
     @BeforeClass
     public void beforeClass() {
-        System.setProperty("webdriver.chrome.driver", "src/main/java/Executables/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/Webdriver/Executables/chromedriver.exe");
         Constant.WEBDRIVER = new ChromeDriver();
         Constant.WEBDRIVER.manage().window().maximize();
         // E:\JavaCoBan\SeleniumLevel-1\src\main
@@ -31,24 +31,24 @@ public class BookTicketTest {
     public void beforeMethod() {
         System.out.println("Pre-condition");
         homePage.open();
+        homePage.gotoLoginPage();
     }
 
     @AfterMethod
     public void afterMethod() {
         System.out.println("Post-condition");
-        if (homePage.isLoggedIn()) {
-            homePage.logout();
-        }
+        homePage.logout();
     }
 
-    @Test
+    @Test(description = "TC04 - Login page displays when un-logged User clicks on Book ticket tab")
     public void TC04() {
-        System.out.println("TC04 - Login page displays when un-logged User clicks on Book ticket tab");
+        //System.out.println("TC04 - Login page displays when un-logged User clicks on Book ticket tab");
         generalPage.gotoBookTicket();
-        LoginPage loginPage = new LoginPage();
+        Assert.assertTrue(loginPage.isAt(),"Login page don't displayed");
+        /*LoginPage loginPage = new LoginPage();
         String actualMsg = loginPage.getNameLoginPage();
         String expectedMsg = "Login Page";
-        Assert.assertTrue(loginPage.verifyLoginPagedIsDisplayed(), "Login page don't displayed");
+        Assert.assertTrue(loginPage.verifyLoginPagedIsDisplayed(), "Login page don't displayed");*/
         /*Assert.assertEquals(actualMsg,expectedMsg,"Login page don't displayed");*/
     }
 }
