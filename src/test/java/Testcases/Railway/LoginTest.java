@@ -42,7 +42,7 @@ public class LoginTest {
     public void TC01() {
         //System.out.println("TC01 - User can log into Railway with valid username and password");
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
-        String actualMsg = homePage.getWelcomeMessage();
+        String actualMsg = homePage.getWelcomeMessageText();
         String expectedMsg = String.format(Constant.MSG_WELCOME_USER, Constant.USERNAME);
         Assert.assertEquals(actualMsg, expectedMsg, "Welcome message is not displayed as expected");
         /*if (actualMsg.contentEquals(expectedMsg)) {

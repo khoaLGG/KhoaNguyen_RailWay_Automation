@@ -17,19 +17,19 @@ public class GeneralPage {
     private final By errorMessage = By.xpath("//div[@id='content']/p");
 
     // Elements
-    protected WebElement getTabLogin() {
+    protected WebElement getLogin() {
         return Constant.WEBDRIVER.findElement(tabLogin);
     }
 
-    protected WebElement getTabLogout() {
+    protected WebElement getLogout() {
         return Constant.WEBDRIVER.findElement(tabLogout);
     }
 
-    protected WebElement getTabBookTicket() {
+    protected WebElement getBookTicket() {
         return Constant.WEBDRIVER.findElement(tabBookTicket);
     }
 
-    protected WebElement getLblWelcomeMessage() {
+    protected WebElement getWelcomeMessage() {
         return Constant.WEBDRIVER.findElement(lblWelcomeMessage);
     }
 
@@ -42,8 +42,8 @@ public class GeneralPage {
         return Constant.WEBDRIVER.findElements(tabLogout).size() != 0;
     }
 
-    public String getWelcomeMessage() {
-        return this.getLblWelcomeMessage().getText();
+    public String getWelcomeMessageText() {
+        return this.getWelcomeMessage().getText();
     }
 
     public String getErrorMsg() {
@@ -51,16 +51,16 @@ public class GeneralPage {
     }
 
     public void gotoLoginPage() {
-        this.getTabLogin().click();
+        this.getLogin().click();
     }
 
     public void logout() {
         if (this.isLoggedIn()) {
-                this.getTabLogout().click();
+                this.getLogout().click();
         }
     }
 
     public void gotoBookTicket() {
-        this.getTabBookTicket().click();
+        this.getBookTicket().click();
     }
 }
