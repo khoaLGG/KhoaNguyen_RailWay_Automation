@@ -8,7 +8,8 @@ import org.testng.Assert;
 public class LoginPage extends GeneralPage {
 
     private final String loginPageTitle = "Login Page";
-
+    private final String myTickKetLbl = "Manage Tickets";
+    private final String changePasswordLbl = "Change password";
     // Locators
     private final By _txtUsername = By.xpath("//input[@id='username']");
     private final By _txtPassword = By.xpath("//input[@id='password']");
@@ -17,6 +18,11 @@ public class LoginPage extends GeneralPage {
     private final By _btnLogout = By.xpath("//span[contains(.,'Log out')]");
     private final By _lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
     private final By _errorMsg = By.xpath("//p[contains(.,'There was a problem with your login and/or errors exist in your form.')]");
+    private final By _myTicketTab = By.xpath("//span[contains(.,'My ticket')]");
+    private final By _changePasswordTab = By.xpath("//span[contains(.,'Change password')]");
+    private final By _lblMyTicketPage = By.xpath("//h1[contains(.,'Manage Tickets')]");
+    private final By _lblChangePasswordPage = By.xpath("//h1[contains(.,'Change password')]");
+
 
     // Elements
     public WebElement getUsername() {
@@ -39,30 +45,44 @@ public class LoginPage extends GeneralPage {
         return Constant.WEBDRIVER.findElement(_btnLogout);
     }
 
-    public WebElement getLblLoginErrorMsg() {
-        return Constant.WEBDRIVER.findElement(_lblLoginErrorMsg);
+    public WebElement getMyTicketPage() {
+        return Constant.WEBDRIVER.findElement(_lblMyTicketPage);
     }
 
+    public WebElement getMyTicket() {
+        return Constant.WEBDRIVER.findElement(_myTicketTab);
+    }
+
+    public WebElement getChangePassword() {
+        return Constant.WEBDRIVER.findElement(_changePasswordTab);
+    }
+
+    public WebElement getChangePasswordPage() {
+        return Constant.WEBDRIVER.findElement(_lblChangePasswordPage);
+    }
 
     // Methods
 
-    public boolean isAt(){
-        return getNameLoginPage().equals(loginPageTitle);
-    }
-
-    public String getNameOfLoginPage() {
-        return this.getNameLoginPage().getText();
-    }
-
-    public Boolean isMsgDisplayed() {
-        return Constant.WEBDRIVER.findElement(By.xpath("//p[contains(.,'There was a problem with your login and/or errors exist in your form.')]")).isDisplayed();
-    }
-
-    public boolean verifyLoginPagedIsDisplayed() {
+    public boolean verifyMyTicketTabDisplayed() {
         boolean flag = false;
-        if (Constant.WEBDRIVER.findElement(_lblNameLoginPage).isDisplayed()) {
-            //Assert.assertEquals(actualMsg, expectedMsg, "don't navigate login page");
-            return flag = true;
+        if (Constant.WEBDRIVER.findElements(_myTicketTab).size() != 0) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    public boolean verifyChangePasswordDisplayed() {
+        boolean flag = false;
+        if (Constant.WEBDRIVER.findElements(_changePasswordTab).size() != 0) {
+            flag = true;
+        }
+        return flag;
+    }
+
+    public boolean verifyLogoutPageDisplayed() {
+        boolean flag = false;
+        if (Constant.WEBDRIVER.findElements(_btnLogout).size() != 0) {
+            flag = true;
         }
         return flag;
     }
@@ -80,16 +100,26 @@ public class LoginPage extends GeneralPage {
         this.getUsername().sendKeys(username);
         this.getPassword().sendKeys(password);
         this.getLogin().click();
-
         return new HomePage();
     }
 
-    public boolean isUsernameTbBlank() {
-        return Constant.WEBDRIVER.findElements(_errorMsg).size() != 0;
+    public boolean isAtLoginPage() {
+        return getNameLoginPage().getText().equals(loginPageTitle);
     }
 
-    public void logout() {
-        this.getLogout().click();
+    public boolean isAtMyTicketPage() {
+        return getMyTicketPage().getText().equals(myTickKetLbl);
     }
 
+    public void gotoMyTicketTab() {
+        this.getMyTicket().click();
+    }
+
+    public void gotoChangePasswordPage() {
+        this.getChangePassword().click();
+    }
+
+    public boolean isAtChangePasswordPAge() {
+        return getChangePasswordPage().getText().equals(changePasswordLbl);
+    }
 }

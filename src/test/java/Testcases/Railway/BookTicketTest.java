@@ -44,7 +44,7 @@ public class BookTicketTest {
     public void TC04() {
         //System.out.println("TC04 - Login page displays when un-logged User clicks on Book ticket tab");
         generalPage.gotoBookTicket();
-        Assert.assertTrue(loginPage.isAt(),"Login page don't displayed");
+        Assert.assertTrue(loginPage.isAtLoginPage(),"Login page don't displayed");
         /*LoginPage loginPage = new LoginPage();
         String actualMsg = loginPage.getNameLoginPage();
         String expectedMsg = "Login Page";

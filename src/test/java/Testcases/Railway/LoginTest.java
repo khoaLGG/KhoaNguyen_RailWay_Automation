@@ -1,6 +1,7 @@
 package Testcases.Railway;
 
 import Common.Constant.Constant;
+import PageObjects.Railway.GeneralPage;
 import PageObjects.Railway.HomePage;
 import PageObjects.Railway.LoginPage;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,6 +12,7 @@ public class LoginTest {
 
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
+    GeneralPage generalPage = new GeneralPage();
 
     @BeforeClass
     public void beforeClass() {
@@ -93,5 +95,24 @@ public class LoginTest {
         String expectedMsg = Constant.MSG_RUN_OUT_OF_TRY_LOGIN;
         Assert.assertEquals(actualMsg, expectedMsg, "error message not displayed as expected");
     }
+
+    @Test(description = "TC06_Additional pages display once user logged in")
+    public void TC06(){
+        loginPage.login(Constant.USERNAME,Constant.PASSWORD);
+        boolean check = loginPage.verifyMyTicketTabDisplayed();
+        Assert.assertTrue(check,"\"My Ticket\" tab not showing");
+        check = loginPage.verifyChangePasswordDisplayed();
+        Assert.assertTrue(check,"\"Change Password\" tab not showing");
+        check = loginPage.verifyLogoutPageDisplayed();
+        Assert.assertTrue(check,"\"Logout\" tab not showing");
+        loginPage.gotoMyTicketTab();
+        check = loginPage.isAtMyTicketPage();
+        Assert.assertTrue(check,"user can't navigate to My ticket page");
+        loginPage.gotoChangePasswordPage();
+        check = loginPage.isAtChangePasswordPAge();
+        Assert.assertTrue(check,"user can't navigate to Change password page");
+    }
+
+
 
 }

@@ -42,6 +42,8 @@ public class GeneralPage {
         return Constant.WEBDRIVER.findElements(tabLogout).size() != 0;
     }
 
+
+
     public String getWelcomeMessageText() {
         return this.getWelcomeMessage().getText();
     }
@@ -63,4 +65,6 @@ public class GeneralPage {
     public void gotoBookTicket() {
         this.getBookTicket().click();
     }
+
+
 }
