@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 public class Register {
 
 
+    public static String email;
 
     // Locators
-    private final By _registerTab = By.xpath("//span[contains(.,'Register')]");
     private final By _emailTextBox = By.xpath("//input[@id='email']");
     private final By _passwordTextBox = By.xpath("//input[@id='password']");
     private final By _confirmPassWordTextBox = By.xpath("//input[@id='confirmPassword']");
@@ -19,9 +19,6 @@ public class Register {
     private final By _registerSuccessMsg = By.xpath("//p");
 
     // Elements
-    public WebElement getRegisterPage() {
-        return Constant.WEBDRIVER.findElement(_registerTab);
-    }
 
     public WebElement getEmail() {
         return Constant.WEBDRIVER.findElement(_emailTextBox);
@@ -54,18 +51,16 @@ public class Register {
         return getRegisterSuccess().getText();
     }
 
-    public void gotoRegisterTab() {
-        this.getRegisterPage().click();
+
+    public String register(){
+        return this.submitRegister();
     }
 
-    public void register(){
-        this.submitRegister();
-    }
-
-    public void submitRegister(){
-        String email =GenerateEmail.GenRandomString() + "@"+GenerateEmail.GenRandomString()+".com";
+    public String submitRegister(){
+        email =GenerateEmail.GenRandomString() + "@"+GenerateEmail.GenRandomString()+".com";
         this.fillRegisterInformation(email, Constant.PASSWORD, Constant.PASSWORD, Constant.PASSWORD);
         this.getRegister().click();
+        return email;
     }
 
     public void fillRegisterInformation(String email, String password, String confirmPW, String PID){

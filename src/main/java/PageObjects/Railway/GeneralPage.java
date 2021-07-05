@@ -8,15 +8,21 @@ import org.openqa.selenium.WebElement;
 public class GeneralPage {
 
 
-
     // Locators
     private final By tabLogin = By.xpath("//div[@id='menu']//a[@href='/Account/Login.cshtml']");
     private final By tabLogout = By.xpath("//div[@id='menu']//a[@href='/Account/Logout']");
     private final By tabBookTicket = By.xpath("//span[contains(.,'Book ticket')]");
     private final By lblWelcomeMessage = By.xpath("//div[@class='account']/strong");
     private final By errorMessage = By.xpath("//div[@id='content']/p");
+    private final By _registerTab = By.xpath("//span[contains(.,'Register')]");
+
 
     // Elements
+
+    public WebElement getRegisterPage() {
+        return Constant.WEBDRIVER.findElement(_registerTab);
+    }
+
     protected WebElement getLogin() {
         return Constant.WEBDRIVER.findElement(tabLogin);
     }
@@ -43,7 +49,6 @@ public class GeneralPage {
     }
 
 
-
     public String getWelcomeMessageText() {
         return this.getWelcomeMessage().getText();
     }
@@ -56,9 +61,14 @@ public class GeneralPage {
         this.getLogin().click();
     }
 
+
+    public void gotoRegisterPage() {
+        this.getRegisterPage().click();
+    }
+
     public void logout() {
         if (this.isLoggedIn()) {
-                this.getLogout().click();
+            this.getLogout().click();
         }
     }
 

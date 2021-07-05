@@ -11,9 +11,8 @@ import org.testng.annotations.*;
 
 public class RegisterTest {
     HomePage homePage = new HomePage();
-    LoginPage loginPage = new LoginPage();
-    GeneralPage generalPage = new GeneralPage();
     Register register = new Register();
+    GeneralPage generalPage = new GeneralPage();
 
     @BeforeClass
     public void beforeClass() {
@@ -32,7 +31,7 @@ public class RegisterTest {
     public void beforeMethod() {
         System.out.println("Pre-condition");
         homePage.open();
-        register.gotoRegisterTab();
+        generalPage.gotoRegisterPage();
     }
 
     @AfterMethod
@@ -43,9 +42,11 @@ public class RegisterTest {
 
     @Test(description = "TC07 - User can create new account")
     public void TC07() {
-        register.register();
+        String email = register.register();
+        System.out.println(email);
         String actualMsg = register.getRegisterSuccessMsg();
         String expectedMsg = Constant.MSG_REGISTER_SUCCESSFULLY;
         Assert.assertEquals(actualMsg,expectedMsg,"The message content is not displayed correctly");
     }
+
 }
