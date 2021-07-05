@@ -22,7 +22,7 @@ public class RegisterTest extends TestBase {
         loginPage.login(email,Constant.PASSWORD);
         boolean check = generalPage.isLoggedIn();
         Assert.assertFalse(check,"User can login success when account hasn't been activated");
-        check = loginPage.verifyMsgInvalidUsernameOrPasswordDisplayed(check);
+        check = loginPage.verifyMsgAccountHasNotBeenActivated(check);
         Assert.assertTrue(check,"The message content is not displayed correctly");
     }
 }

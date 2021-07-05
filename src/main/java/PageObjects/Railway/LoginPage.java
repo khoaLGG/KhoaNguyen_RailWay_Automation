@@ -122,7 +122,7 @@ public class LoginPage extends GeneralPage {
         return getChangePasswordPage().getText().equals(changePasswordLbl);
     }
 
-    public boolean verifyMsgInvalidUsernameOrPasswordDisplayed(boolean check) {
+    public boolean verifyMsgAccountHasNotBeenActivated(boolean check) {
         HomePage homePage = new HomePage();
         boolean flag = false;
         if(check == false){
