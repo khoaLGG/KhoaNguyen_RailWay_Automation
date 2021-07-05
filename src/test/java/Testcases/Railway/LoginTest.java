@@ -80,9 +80,9 @@ public class LoginTest {
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         boolean check = loginPage.verifyMyTicketTabDisplayed();
         Assert.assertTrue(check, "\"My Ticket\" tab not showing");
-        check = loginPage.verifyChangePasswordDisplayed();
+        check = loginPage.verifyChangePasswordTabDisplayed();
         Assert.assertTrue(check, "\"Change Password\" tab not showing");
-        check = loginPage.verifyLogoutPageDisplayed();
+        check = loginPage.verifyLogoutTabDisplayed();
         Assert.assertTrue(check, "\"Logout\" tab not showing");
         loginPage.gotoMyTicketTab();
         check = loginPage.isAtMyTicketPage();
@@ -92,20 +92,6 @@ public class LoginTest {
         Assert.assertTrue(check, "user can't navigate to Change password page");
     }
 
-    @Test(description = "User can't login with an account hasn't been activated")
-    public void TC08() {
-        generalPage.gotoRegisterPage();
-        String email = register.register();
 
-        generalPage.gotoLoginPage();
-        loginPage.login(email,Constant.PASSWORD);
-        boolean check = generalPage.isLoggedIn();
-        Assert.assertFalse(check,"User can login success when account hasn't been activated");
-        if(check == false){
-            String actualMsg = homePage.getErrorMsg();
-            String expectedMsg = Constant.MSG_INVALID_USERNAME_PASSWORD;
-            Assert.assertEquals(actualMsg,expectedMsg,"The message content is not displayed correctly");
-        }
-    }
 
 }

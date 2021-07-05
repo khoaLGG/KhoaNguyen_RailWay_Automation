@@ -70,7 +70,7 @@ public class LoginPage extends GeneralPage {
         return flag;
     }
 
-    public boolean verifyChangePasswordDisplayed() {
+    public boolean verifyChangePasswordTabDisplayed() {
         boolean flag = false;
         if (Constant.WEBDRIVER.findElements(_changePasswordTab).size() != 0) {
             flag = true;
@@ -78,7 +78,7 @@ public class LoginPage extends GeneralPage {
         return flag;
     }
 
-    public boolean verifyLogoutPageDisplayed() {
+    public boolean verifyLogoutTabDisplayed() {
         boolean flag = false;
         if (Constant.WEBDRIVER.findElements(_btnLogout).size() != 0) {
             flag = true;
@@ -120,5 +120,18 @@ public class LoginPage extends GeneralPage {
 
     public boolean isAtChangePasswordPAge() {
         return getChangePasswordPage().getText().equals(changePasswordLbl);
+    }
+
+    public boolean verifyMsgInvalidUsernameOrPasswordDisplayed(boolean check) {
+        HomePage homePage = new HomePage();
+        boolean flag = false;
+        if(check == false){
+            String actualMsg = homePage.getErrorMsg();
+            String expectedMsg = Constant.MSG_INVALID_USERNAME_PASSWORD;
+            if(actualMsg.equals(expectedMsg)){
+                flag = true;
+            };
+        }
+        return flag;
     }
 }

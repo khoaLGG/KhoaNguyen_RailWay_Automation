@@ -57,7 +57,7 @@ public class Register {
     }
 
     public String submitRegister(){
-        email =GenerateEmail.GenRandomString() + "@"+GenerateEmail.GenRandomString()+".com";
+        email ="Railway+"+GenerateEmail.GenRandomString() +"@gmail.com";
         this.fillRegisterInformation(email, Constant.PASSWORD, Constant.PASSWORD, Constant.PASSWORD);
         this.getRegister().click();
         return email;

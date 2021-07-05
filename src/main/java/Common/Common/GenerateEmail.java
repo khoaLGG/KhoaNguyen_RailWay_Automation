@@ -15,7 +15,7 @@ public class GenerateEmail {
         int rdNumber;
         String randomString = "";
         Random rd = new Random();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             rdText = rd.nextInt(alpha.length() - 1);
             randomString+=(Character.toString(alpha.charAt(rdText)));
             rdNumber = rd.nextInt(digits.length() - 1);

@@ -1,44 +1,10 @@
 package Testcases.Railway;
 
 import Common.Constant.Constant;
-import PageObjects.Railway.GeneralPage;
-import PageObjects.Railway.HomePage;
-import PageObjects.Railway.LoginPage;
-import PageObjects.Railway.Register;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class RegisterTest {
-    HomePage homePage = new HomePage();
-    Register register = new Register();
-    GeneralPage generalPage = new GeneralPage();
-
-    @BeforeClass
-    public void beforeClass() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/Webdriver/Executables/chromedriver.exe");
-        Constant.WEBDRIVER = new ChromeDriver();
-        Constant.WEBDRIVER.manage().window().maximize();
-        // E:\JavaCoBan\SeleniumLevel-1\src\main
-    }
-
-    @AfterClass
-    public void afterClass() {
-        //Constant.WEBDRIVER.quit();
-    }
-
-    @BeforeMethod
-    public void beforeMethod() {
-        System.out.println("Pre-condition");
-        homePage.open();
-        generalPage.gotoRegisterPage();
-    }
-
-    @AfterMethod
-    public void afterMethod() {
-        System.out.println("Post-condition");
-        homePage.logout();
-    }
+public class RegisterTest extends TestBase {
 
     @Test(description = "TC07 - User can create new account")
     public void TC07() {
@@ -48,5 +14,15 @@ public class RegisterTest {
         String expectedMsg = Constant.MSG_REGISTER_SUCCESSFULLY;
         Assert.assertEquals(actualMsg,expectedMsg,"The message content is not displayed correctly");
     }
-
+    @Test(description = "User can't login with an account hasn't been activated")
+    public void TC08() {
+        generalPage.gotoRegisterPage();
+        String email = register.register();
+        generalPage.gotoLoginPage();
+        loginPage.login(email,Constant.PASSWORD);
+        boolean check = generalPage.isLoggedIn();
+        Assert.assertFalse(check,"User can login success when account hasn't been activated");
+        check = loginPage.verifyMsgInvalidUsernameOrPasswordDisplayed(check);
+        Assert.assertTrue(check,"The message content is not displayed correctly");
+    }
 }
