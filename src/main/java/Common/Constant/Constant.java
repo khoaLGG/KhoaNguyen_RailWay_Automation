@@ -9,6 +9,7 @@ public class Constant {
     public static final String USERNAME = "khoa@logigear.com";
     public static final String PASSWORD = "123456789";
     public static final String INVALID_PASSWORD = "1";
+    public static final String MSG_CHANGE_PASSWORD_SUCCESS = "Your password has been updated!";
     public static String MSG_WELCOME_USER = "Welcome %s";
     public static String MSG_REGISTER_SUCCESSFULLY = "You're here";
     public static final String MSG_INVALID_USERNAME_PASSWORD = "Invalid username or password. Please try again.";

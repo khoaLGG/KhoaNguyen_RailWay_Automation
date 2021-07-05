@@ -4,7 +4,7 @@ import Common.Constant.Constant;
 import PageObjects.Railway.GeneralPage;
 import PageObjects.Railway.HomePage;
 import PageObjects.Railway.LoginPage;
-import PageObjects.Railway.Register;
+import PageObjects.Railway.RegisterPage;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -13,7 +13,7 @@ public class LoginTest {
 
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
-    Register register = new Register();
+    RegisterPage registerPage = new RegisterPage();
     GeneralPage generalPage = new GeneralPage();
 
     @BeforeClass

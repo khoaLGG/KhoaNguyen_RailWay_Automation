@@ -1,10 +1,7 @@
 package Testcases.Railway;
 
 import Common.Constant.Constant;
-import PageObjects.Railway.GeneralPage;
-import PageObjects.Railway.HomePage;
-import PageObjects.Railway.LoginPage;
-import PageObjects.Railway.Register;
+import PageObjects.Railway.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
@@ -13,9 +10,10 @@ import org.testng.annotations.BeforeMethod;
 
 public class TestBase {
     HomePage homePage = new HomePage();
-    Register register = new Register();
+    RegisterPage registerPage = new RegisterPage();
     GeneralPage generalPage = new GeneralPage();
     LoginPage loginPage = new LoginPage();
+    ChangePasswordPage changePasswordPage = new ChangePasswordPage();
 
     @BeforeClass
     public void beforeClass() {
@@ -40,6 +38,6 @@ public class TestBase {
     @AfterMethod
     public void afterMethod() {
         System.out.println("Post-condition");
-        homePage.logout();
+       // homePage.logout();
     }
 }

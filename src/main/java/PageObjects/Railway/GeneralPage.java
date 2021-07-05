@@ -14,13 +14,13 @@ public class GeneralPage {
     private final By tabBookTicket = By.xpath("//span[contains(.,'Book ticket')]");
     private final By lblWelcomeMessage = By.xpath("//div[@class='account']/strong");
     private final By errorMessage = By.xpath("//div[@id='content']/p");
-    private final By _registerTab = By.xpath("//span[contains(.,'Register')]");
+    private final By registerTab = By.xpath("//span[contains(.,'Register')]");
 
 
     // Elements
 
     public WebElement getRegisterPage() {
-        return Constant.WEBDRIVER.findElement(_registerTab);
+        return Constant.WEBDRIVER.findElement(registerTab);
     }
 
     protected WebElement getLogin() {

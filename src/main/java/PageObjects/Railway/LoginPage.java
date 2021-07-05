@@ -22,7 +22,6 @@ public class LoginPage extends GeneralPage {
     private final By _lblMyTicketPage = By.xpath("//h1[contains(.,'Manage Tickets')]");
     private final By _lblChangePasswordPage = By.xpath("//h1[contains(.,'Change password')]");
 
-
     // Elements
     public WebElement getUsername() {
         return Constant.WEBDRIVER.findElement(_txtUsername);
@@ -95,11 +94,10 @@ public class LoginPage extends GeneralPage {
         }
     }
 
-    public HomePage login(String username, String password) {
+    public void login(String username, String password) {
         this.getUsername().sendKeys(username);
         this.getPassword().sendKeys(password);
         this.getLogin().click();
-        return new HomePage();
     }
 
     public boolean isAtLoginPage() {

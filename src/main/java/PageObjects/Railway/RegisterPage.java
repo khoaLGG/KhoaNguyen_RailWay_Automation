@@ -5,7 +5,7 @@ import Common.Common.GenerateEmail;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class Register {
+public class RegisterPage {
 
 
     public static String email;
