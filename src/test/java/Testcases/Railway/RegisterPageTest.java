@@ -50,7 +50,7 @@ public class RegisterPageTest extends TestBase {
         String actualMsg = registerPage.getRegisterFailedWithTwoPWDoNotMatchMsg();
         String expectedMsg = Constant.MSG_THE_TWO_PASSWORD_DO_NOT_MATCH;
         Assert.assertEquals(
-                actualMsg
+                 actualMsg
                 ,expectedMsg
                 ,"The message content is not displayed correctly");
     }
