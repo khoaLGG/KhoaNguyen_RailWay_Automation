@@ -10,6 +10,7 @@ public class Constant {
     public static final String PASSWORD = "123456789";
     public static final String CONFIRM_INVALID_PASSWORD = "1";
     public static final String PID = "123456789";
+    public static final String ErrorPage = "Server Error";
     public static final String EMPTY_PID = "";
     public static final String EMPTY_PASSWORD = "";
     public static final String EMPTY_CONFIRM_PASSWORD = "";

@@ -14,6 +14,8 @@ public class TestBase {
     GeneralPage generalPage = new GeneralPage();
     LoginPage loginPage = new LoginPage();
     ChangePasswordPage changePasswordPage = new ChangePasswordPage();
+    ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
+    ServerError serverError = new ServerError();
 
     @BeforeClass
     public void beforeClass() {

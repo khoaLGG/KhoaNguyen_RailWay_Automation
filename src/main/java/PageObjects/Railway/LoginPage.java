@@ -15,14 +15,17 @@ public class LoginPage extends GeneralPage {
     private final By _btnLogin = By.xpath("//input[@value='Login']");
     private final By _lblNameLoginPage = By.xpath("//div[@id='content']/h1");
     private final By _btnLogout = By.xpath("//span[contains(.,'Log out')]");
-    private final By _lblLoginErrorMsg = By.xpath("//p[@class='message error LoginForm']");
-    private final By _errorMsg = By.xpath("//p[contains(.,'There was a problem with your login and/or errors exist in your form.')]");
     private final By _myTicketTab = By.xpath("//span[contains(.,'My ticket')]");
     private final By _changePasswordTab = By.xpath("//span[contains(.,'Change password')]");
     private final By _lblMyTicketPage = By.xpath("//h1[contains(.,'Manage Tickets')]");
     private final By _lblChangePasswordPage = By.xpath("//h1[contains(.,'Change password')]");
+    private final By _linkForgotPasswordPage = By.xpath("//div[@id='content']/ul/li[3]/a");
 
     // Elements
+    public WebElement getForgotPasswordPage(){
+        return Constant.WEBDRIVER.findElement(_linkForgotPasswordPage);
+    }
+
     public WebElement getUsername() {
         return Constant.WEBDRIVER.findElement(_txtUsername);
     }
@@ -110,6 +113,10 @@ public class LoginPage extends GeneralPage {
 
     public void gotoMyTicketTab() {
         this.getMyTicket().click();
+    }
+
+    public void goToForgotPasswordPage(){
+        this.getForgotPasswordPage().click();
     }
 
     public void gotoChangePasswordPage() {
