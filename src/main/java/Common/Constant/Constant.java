@@ -10,8 +10,13 @@ public class Constant {
     public static final String PASSWORD = "123456789";
     public static final String CONFIRM_INVALID_PASSWORD = "1";
     public static final String PID = "123456789";
+    public static final String EMPTY_PID = "";
+    public static final String EMPTY_PASSWORD = "";
+    public static final String EMPTY_CONFIRM_PASSWORD = "";
     public static final String INVALID_PASSWORD = "1";
-    public static final String MSG_THE_TWO_PASSWORD_DO_NOT_MATCH = "There're errors in the form. Please correct the errors and try again.";
+    public static final String MSG_REGISTER_FAILED = "There're errors in the form. Please correct the errors and try again.";
+    public static final String MSG_PASSWORD_FIELD = "Invalid password length";
+    public static final String MSG_PID_FIELD = "Invalid ID length";
     public static final String MSG_CHANGE_PASSWORD_SUCCESS = "Your password has been updated!";
     public static String MSG_WELCOME_USER = "Welcome %s";
     public static String MSG_REGISTER_SUCCESSFULLY = "Thank you for registering your account";

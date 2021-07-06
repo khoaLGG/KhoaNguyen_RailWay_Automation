@@ -47,11 +47,39 @@ public class RegisterPageTest extends TestBase {
                 Constant.PASSWORD,
                 Constant.CONFIRM_INVALID_PASSWORD,
                 Constant.PID);
-        String actualMsg = registerPage.getRegisterFailedWithTwoPWDoNotMatchMsg();
-        String expectedMsg = Constant.MSG_THE_TWO_PASSWORD_DO_NOT_MATCH;
+        String actualMsg = registerPage.getRegisterFailedMsg();
+        String expectedMsg = Constant.MSG_REGISTER_FAILED;
         Assert.assertEquals(
                  actualMsg
                 ,expectedMsg
                 ,"The message content is not displayed correctly");
+    }
+
+    @Test(description = "TC11 - User can't create account while password and PID fields are empty")
+    public void TC11(){
+        generalPage.gotoRegisterPage();
+        registerPage.register(
+                registerPage.GenerateEmail(),
+                Constant.EMPTY_PASSWORD,
+                Constant.EMPTY_CONFIRM_PASSWORD,
+                Constant.EMPTY_PID);
+        String actualMsg = registerPage.getRegisterFailedMsg();
+        String expectedMsg = Constant.MSG_REGISTER_FAILED;
+        Assert.assertEquals(
+                 actualMsg
+                ,expectedMsg
+                ,"The main message content is not displayed correctly");
+        actualMsg = registerPage.getPassWordFieldMsg();
+        expectedMsg = Constant.MSG_PASSWORD_FIELD;
+        Assert.assertEquals(
+                 actualMsg
+                ,expectedMsg
+                ,"The message content of password fields is not displayed correctly");
+        actualMsg = registerPage.getPIDFieldMsg();
+        expectedMsg = Constant.MSG_PID_FIELD;
+        Assert.assertEquals(
+                actualMsg
+                ,expectedMsg
+                ,"The message content of PID fields is not displayed correctly");
     }
 }

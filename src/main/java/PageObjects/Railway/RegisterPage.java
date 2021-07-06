@@ -17,7 +17,9 @@ public class RegisterPage {
     private final By _PIDOrPassPortNumberTextBox = By.xpath("//input[@id='pid']");
     private final By _registerBtn = By.xpath("//p/input");
     private final By _registerSuccessMsg = By.xpath("//p");
-    private final By _registerFailedWithTwoPWDoNotMatchMsg = By.xpath("//div[@id='content']/p[2]");
+    private final By _registerFailedMsg = By.xpath("//div[@id='content']/p[2]");
+    private final By _passwordFieldMsg = By.xpath("//label[2]");
+    private final By _PIDMsg = By.xpath("//li[4]/label[2]");
 
     // Elements
 
@@ -41,39 +43,54 @@ public class RegisterPage {
         return Constant.WEBDRIVER.findElement(_registerBtn);
     }
 
-    public WebElement getRegisterSuccess(){
+    public WebElement getMsgPIDField() {
+        return Constant.WEBDRIVER.findElement(_PIDMsg);
+    }
+
+    public WebElement getRegisterSuccess() {
         return Constant.WEBDRIVER.findElement(_registerSuccessMsg);
     }
 
-    public WebElement getRegisterFailedWithTwoPWDoNotMatch(){
-        return Constant.WEBDRIVER.findElement(_registerFailedWithTwoPWDoNotMatchMsg);
+    public WebElement getRegisterFailed() {
+        return Constant.WEBDRIVER.findElement(_registerFailedMsg);
     }
 
+    public WebElement getMsgPassWordField() {
+        return Constant.WEBDRIVER.findElement(_passwordFieldMsg);
+    }
     //Methods
 
-    public String getRegisterSuccessMsg(){
+    public String getPIDFieldMsg(){
+        return getMsgPIDField().getText();
+    }
+
+    public String getPassWordFieldMsg() {
+        return getMsgPassWordField().getText();
+    }
+
+    public String getRegisterSuccessMsg() {
         return getRegisterSuccess().getText();
     }
 
-    public String getRegisterFailedWithTwoPWDoNotMatchMsg(){
-        return getRegisterFailedWithTwoPWDoNotMatch().getText();
+    public String getRegisterFailedMsg() {
+        return getRegisterFailed().getText();
     }
 
-    public String register(String email, String password, String confirmPW, String PID){
+    public String register(String email, String password, String confirmPW, String PID) {
         return this.submitRegister(email, password, confirmPW, PID);
     }
 
-    public String GenerateEmail(){
-        return "Railway+"+ GenerateSuffixOfEmail.GenRandomString() +"@gmail.com";
+    public String GenerateEmail() {
+        return "Railway+" + GenerateSuffixOfEmail.GenRandomString() + "@gmail.com";
     }
 
-    public String submitRegister(String email, String password, String confirmPW, String PID){
+    public String submitRegister(String email, String password, String confirmPW, String PID) {
         this.fillRegisterInformation(email, password, confirmPW, PID);
         this.getRegister().click();
         return email;
     }
 
-    public void fillRegisterInformation(String email, String password, String confirmPW, String PID){
+    public void fillRegisterInformation(String email, String password, String confirmPW, String PID) {
         this.getEmail().sendKeys(email);
         this.getPassword().sendKeys(password);
         this.getConfirmPassword().sendKeys(confirmPW);
