@@ -4,7 +4,7 @@ package Common.Common;
 import java.util.Random;
 
 
-public class GenerateEmail {
+public class GenerateSuffixOfEmail {
 
     private static final String alpha = "abcdefghijklmnopqrstwvxyzABCDEFGHIJKLMNOPQRSTWVXYZ";
     private static final String digits = "0123456789";

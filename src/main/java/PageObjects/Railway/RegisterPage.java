@@ -1,7 +1,7 @@
 package PageObjects.Railway;
 
 import Common.Constant.Constant;
-import Common.Common.GenerateEmail;
+import Common.Common.GenerateSuffixOfEmail;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -52,13 +52,16 @@ public class RegisterPage {
     }
 
 
-    public String register(){
-        return this.submitRegister();
+    public String register(String email, String password, String confirmPW, String PID){
+        return this.submitRegister(email, password, confirmPW, PID);
     }
 
-    public String submitRegister(){
-        email ="Railway+"+GenerateEmail.GenRandomString() +"@gmail.com";
-        this.fillRegisterInformation(email, Constant.PASSWORD, Constant.PASSWORD, Constant.PASSWORD);
+    public String GenerateEmail(){
+        return "Railway+"+ GenerateSuffixOfEmail.GenRandomString() +"@gmail.com";
+    }
+
+    public String submitRegister(String email, String password, String confirmPW, String PID){
+        this.fillRegisterInformation(email, password, confirmPW, PID);
         this.getRegister().click();
         return email;
     }
