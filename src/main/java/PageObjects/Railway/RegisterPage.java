@@ -17,6 +17,7 @@ public class RegisterPage {
     private final By _PIDOrPassPortNumberTextBox = By.xpath("//input[@id='pid']");
     private final By _registerBtn = By.xpath("//p/input");
     private final By _registerSuccessMsg = By.xpath("//p");
+    private final By _registerFailedWithTwoPWDoNotMatchMsg = By.xpath("//div[@id='content']/p[2]");
 
     // Elements
 
@@ -44,6 +45,9 @@ public class RegisterPage {
         return Constant.WEBDRIVER.findElement(_registerSuccessMsg);
     }
 
+    public WebElement getRegisterFailedWithTwoPWDoNotMatch(){
+        return Constant.WEBDRIVER.findElement(_registerFailedWithTwoPWDoNotMatchMsg);
+    }
 
     //Methods
 
@@ -51,6 +55,9 @@ public class RegisterPage {
         return getRegisterSuccess().getText();
     }
 
+    public String getRegisterFailedWithTwoPWDoNotMatchMsg(){
+        return getRegisterFailedWithTwoPWDoNotMatch().getText();
+    }
 
     public String register(String email, String password, String confirmPW, String PID){
         return this.submitRegister(email, password, confirmPW, PID);

@@ -16,7 +16,10 @@ public class RegisterPageTest extends TestBase {
         System.out.println(email);
         String actualMsg = registerPage.getRegisterSuccessMsg();
         String expectedMsg = Constant.MSG_REGISTER_SUCCESSFULLY;
-        Assert.assertEquals(actualMsg, expectedMsg, "The message content is not displayed correctly");
+        Assert.assertEquals(
+                actualMsg,
+                expectedMsg,
+                "The message content is not displayed correctly");
     }
 
     @Test(description = "User can't login with an account hasn't been activated")
@@ -35,8 +38,20 @@ public class RegisterPageTest extends TestBase {
                 "The message content is not displayed correctly");
     }
 
-    @Test(description = "TC10 - User can't create account with \"Confirm password\" is not the same with \"Password\"")
+    @Test(description = "TC10 - User can't create account with \"Confirm password\" " +
+                         "is not the same with \"Password\"")
     public void TC10() {
-
+        generalPage.gotoRegisterPage();
+        registerPage.register(
+                registerPage.GenerateEmail(),
+                Constant.PASSWORD,
+                Constant.CONFIRM_INVALID_PASSWORD,
+                Constant.PID);
+        String actualMsg = registerPage.getRegisterFailedWithTwoPWDoNotMatchMsg();
+        String expectedMsg = Constant.MSG_THE_TWO_PASSWORD_DO_NOT_MATCH;
+        Assert.assertEquals(
+                 actualMsg
+                ,expectedMsg
+                ,"The message content is not displayed correctly");
     }
 }
