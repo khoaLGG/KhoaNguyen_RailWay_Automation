@@ -35,8 +35,8 @@ public class RegisterPageTest extends TestBase {
                 "The message content is not displayed correctly");
     }
 
-    /*@Test(description = "TC10 - User can't create account with \"Confirm password\" is not the same with \"Password\"")
+    @Test(description = "TC10 - User can't create account with \"Confirm password\" is not the same with \"Password\"")
     public void TC10() {
 
-    }*/
+    }
 }
