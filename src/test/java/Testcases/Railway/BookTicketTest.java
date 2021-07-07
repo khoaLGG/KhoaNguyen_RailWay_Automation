@@ -1,10 +1,13 @@
 package Testcases.Railway;
 
+import Common.Common.GetDateToday;
 import Common.Constant.Constant;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class BookTicketTest extends TestBase {
+
+    GetDateToday getDateToday = new GetDateToday();
 
     @Test(description = "TC04 - Login page displays when un-logged User clicks on Book ticket tab")
     public void TC04() {
@@ -16,6 +19,7 @@ public class BookTicketTest extends TestBase {
         generalPage.goToLoginPage();
         loginPage.login(Constant.USERNAME,Constant.PASSWORD);
         loginPage.goToBookTicket();
+        bookTicketPage.chooseDepartDate();
     }
 }
 
