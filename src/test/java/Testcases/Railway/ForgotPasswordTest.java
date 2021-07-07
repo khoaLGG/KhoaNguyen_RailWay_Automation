@@ -28,4 +28,12 @@ public class ForgotPasswordTest extends TestBase{
         Assert.assertFalse(serverError.verifyMailBoxDisplayed()
                 ,"this testcase was blocked by open mailbox step");
     }
+    @Test(description = "TC13 - Errors display if password " +
+            "and confirm password don't match when resetting password ")
+    public void TC13(){
+        loginPage.goToForgotPasswordPage();
+        forgotPasswordPage.sendInstructions(email);
+        Assert.assertFalse(serverError.verifyMailBoxDisplayed()
+                ,"this testcase was blocked by open mailbox step");
+    }
 }
