@@ -25,6 +25,7 @@ public class BookTicketPage {
         this.getDepartDate().click();
         Constant.WEBDRIVER.findElement(By.xpath("//select[@name='Date']//option[text()='7/11/2021']")).click();
     }
+
     /* public void selectDepartDate(String departDate){
         this.getDepartDate().selectByVisibleText(departDate);
     }*/
