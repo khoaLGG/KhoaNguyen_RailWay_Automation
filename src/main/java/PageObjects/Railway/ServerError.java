@@ -17,6 +17,7 @@ public class ServerError {
     public String getServerErrorMsg() {
        return getServerError().getText();
     }
+
     public boolean verifyMailBoxDisplayed(){
         boolean check = false;
         if(getServerErrorMsg().contains(Constant.ErrorPage)){

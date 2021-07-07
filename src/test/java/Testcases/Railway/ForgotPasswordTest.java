@@ -26,6 +26,6 @@ public class ForgotPasswordTest extends TestBase{
         loginPage.goToForgotPasswordPage();
         forgotPasswordPage.sendInstructions(email);
         Assert.assertFalse(serverError.verifyMailBoxDisplayed()
-                ,"this testcase was blocked by open mailbox step ");
+                ,"this testcase was blocked by open mailbox step");
     }
 }
