@@ -57,7 +57,7 @@ public class GeneralPage {
         return this.getErrorMessage().getText();
     }
 
-    public void gotoLoginPage() {
+    public void goToLoginPage() {
         this.getLogin().click();
     }
 
@@ -72,7 +72,7 @@ public class GeneralPage {
         }
     }
 
-    public void gotoBookTicket() {
+    public void goToBookTicket() {
         this.getBookTicket().click();
     }
 

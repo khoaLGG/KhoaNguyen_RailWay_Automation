@@ -8,6 +8,7 @@ public class RegisterPageTest extends TestBase {
 
     @Test(description = "TC07 - User can create new account")
     public void TC07() {
+        generalPage.gotoRegisterPage();
         String email = registerPage.register(
                 registerPage.GenerateEmail(),
                 Constant.PASSWORD,
@@ -30,7 +31,7 @@ public class RegisterPageTest extends TestBase {
                 Constant.PASSWORD,
                 Constant.PASSWORD,
                 Constant.PID);
-        generalPage.gotoLoginPage();
+        generalPage.goToLoginPage();
         loginPage.login(email, Constant.PASSWORD);
         Assert.assertFalse(generalPage.isLoggedIn(),
                 "User can login success when account hasn't been activated");

@@ -32,7 +32,7 @@ public class LoginTest {
     public void beforeMethod() {
         System.out.println("Pre-condition");
         homePage.open();
-        homePage.gotoLoginPage();
+        homePage.goToLoginPage();
     }
 
     @AfterMethod

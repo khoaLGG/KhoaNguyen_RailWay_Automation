@@ -34,7 +34,6 @@ public class TestBase {
     public void beforeMethod() {
         System.out.println("Pre-condition");
         homePage.open();
-        generalPage.gotoRegisterPage();
     }
 
     @AfterMethod

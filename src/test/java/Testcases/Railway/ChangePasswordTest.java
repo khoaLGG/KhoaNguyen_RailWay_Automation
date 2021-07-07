@@ -12,7 +12,7 @@ public class ChangePasswordTest extends TestBase{
     public void beforeMethod() {
         System.out.println("Pre-condition");
         homePage.open();
-        generalPage.gotoLoginPage();
+        generalPage.goToLoginPage();
     }
     @Test(description = "TC09 - User can change password")
     public void TC09(){
