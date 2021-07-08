@@ -1,7 +1,9 @@
 package Testcases.Railway;
 
-import Common.Common.GetDateToday;
 import Common.Constant.Constant;
+import PageObjects.Railway.BookTicketPage;
+import PageObjects.Railway.GeneralPage;
+import PageObjects.Railway.LoginPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -11,7 +13,11 @@ import org.testng.annotations.*;
 
 public class BookTicketTest extends TestBase {
 
-    GetDateToday getDateToday = new GetDateToday();
+
+    BookTicketPage bookTicketPage = new BookTicketPage();
+    LoginPage loginPage = new LoginPage();
+    GeneralPage generalPage = new GeneralPage();
+
 
 
     @Test(description = "TC04 - Login page displays when un-logged User clicks on Book ticket tab")
@@ -33,7 +39,10 @@ public class BookTicketTest extends TestBase {
         generalPage.goToLoginPage();
         loginPage.login(Constant.USERNAME,Constant.PASSWORD);
         loginPage.goToBookTicket();
-        bookTicketPage.chooseDepartDate();
+        bookTicketPage.bookTicket();
+        String actualMsg = bookTicketPage.getBookTicketSuccessMsg();
+        String expectedMsg = Constant.MSG_BOOK_TICKET_SUCCESS;
+        Assert.assertEquals(actualMsg,expectedMsg,"The message content is not displayed correctly" );
     }
 }
 

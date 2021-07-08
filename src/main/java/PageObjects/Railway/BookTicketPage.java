@@ -1,82 +1,100 @@
 package PageObjects.Railway;
 
-import Common.Common.GetDateToday;
-import Common.Common.ScrollIntoView;
 import Common.Common.Utilities;
 import Common.Constant.Constant;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
-
 
 
 public class BookTicketPage {
 
-
-    ScrollIntoView scrollIntoView = new ScrollIntoView();
-    GetDateToday getDateToday = new GetDateToday();
+    Utilities utilities = new Utilities();
 
     // Locators
-    private final By departDateDropdown = By.xpath("//form[@method='post']//fieldset//ol//li//select[@name=\"Date\"]");
+    private final By bookTicketBtn = By.xpath("//input[@value='Book ticket']");
+    private final By bookTicketSuccessMsg = By.xpath("//h1[contains(.,'Ticket Booked Successfully!')]");
 
     // Elements
+    public WebElement getBookTicketSuccess() {
+        return Constant.WEBDRIVER.findElement(bookTicketSuccessMsg);
+    }
+
+    public WebElement getBookTicket() {
+        return Constant.WEBDRIVER.findElement(bookTicketBtn);
+    }
+
     public WebElement getDepartDate() {
         return Constant.WEBDRIVER.findElement(By
                 .xpath("//select[@name='Date']"));
+    }
 
+    public WebElement getDepartFrom() {
+        return Constant.WEBDRIVER.findElement(By
+                .xpath("//select[@name='DepartStation']"));
+    }
+
+    public WebElement getArriveAt() {
+        return Constant.WEBDRIVER.findElement(By
+                .xpath("//select[@name='ArriveStation']"));
+    }
+
+    public WebElement getSeatType() {
+        return Constant.WEBDRIVER.findElement(By
+                .xpath("//select[@name='SeatType']"));
+    }
+
+    public WebElement getTicketAmount() {
+        return Constant.WEBDRIVER.findElement(By
+                .xpath("//select[@name='TicketAmount']"));
     }
 
     // Methods
-
-
-    public void a() {
-        Utilities.scrollAndClickIntoView(this.getDepartDate());
-        Select departDate = new Select(this.getDepartDate());
-        departDate.selectByVisibleText("7/13/2021");
+    public String getBookTicketSuccessMsg() {
+        return getBookTicketSuccess().getText();
     }
-    public void chooseDepartDate()  {
-        /*this.getDepartDate().click();
+
+    public void bookTicket() {
+        this.fillBookTicketInformation();
+        this.getBookTicket().click();
+    }
+
+    private void fillBookTicketInformation() {
+        this.chooseDepartDate();
+        this.chooseDepartFrom();
+        this.chooseArriveAt();
+        this.chooseTypeSeat();
+        this.chooseTicketAmount();
+    }
+
+    public void chooseTicketAmount() {
+        this.getTicketAmount().click();
         Constant.WEBDRIVER.findElement(
-                By.xpath("//select[@name='Date']//option[text()=\""+getDateToday.getDate()+"\"]"))
-                .click();*/
-
-
-
-        Utilities.scrollAndClickIntoView(this.getDepartDate());
-        Select departDate = new Select(this.getDepartDate());
-        departDate.selectByVisibleText("7/13/2021");
-
-
-
-
-
-
-
-        /*WebElement element = Constant.WEBDRIVER.findElement(By.xpath("//form//li[1]//select"));
-        ((JavascriptExecutor) Constant.WEBDRIVER).executeScript("arguments[0].scrollIntoView(true);", element);
-        Thread.sleep(3000);
-
-
-
-
-
-
-
-
-
-        WebElement c = Constant.WEBDRIVER.findElement(By.xpath("//form//li[1]//select"));
-        ((JavascriptExecutor)Constant.WEBDRIVER).executeScript("arguments[0].value='7/12/2021';",c);*/
-
-       /* WebElement haha = Constant.WEBDRIVER.findElement(By.xpath("//form//li[1]//select"));
-        Select hihi = new Select(haha);
-        hihi.selectByVisibleText("7/11/2021");*/
-        /*Select d = new Select(Constant.WEBDRIVER.findElement(By
-                .xpath("//form//li[1]//select")));
-        d.selectByVisibleText("7/11/2021");*/
+                By.xpath("//select[@name='TicketAmount']//option[text()='1']")).click();
     }
 
-    /* public void selectDepartDate(String departDate){
-        this.getDepartDate().selectByVisibleText(departDate);
-    }*///"+getDateToday.getDate()+"
+    public void chooseTypeSeat() {
+        this.getSeatType().click();
+        Constant.WEBDRIVER.findElement(
+                By.xpath("//select[@name='SeatType']//option[text()='Soft seat with air conditioner']")).click();
+    }
+
+    public void chooseArriveAt() {
+        this.getArriveAt().click();
+        Constant.WEBDRIVER.findElement(
+                By.xpath("//select[@name='ArriveStation']//option[text()='Nha Trang']")).click();
+    }
+
+    public void chooseDepartFrom() {
+        this.getDepartFrom().click();
+        Constant.WEBDRIVER.findElement(
+                By.xpath("//select[@name='DepartStation']//option[text()='Sài Gòn']")).click();
+    }
+
+    public void chooseDepartDate() {
+        this.getDepartDate().click();
+        Constant.WEBDRIVER.findElement(
+                By.xpath("//select[@name='Date']//option[text()=\"" + utilities.getDate() + "\"]"))
+                .click();
+    }
+
 }

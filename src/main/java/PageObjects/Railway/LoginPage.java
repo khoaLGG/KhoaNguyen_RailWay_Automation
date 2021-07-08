@@ -9,6 +9,7 @@ public class LoginPage extends GeneralPage {
     private final String loginPageTitle = "Login Page";
     private final String myTickKetLbl = "Manage Tickets";
     private final String changePasswordLbl = "Change password";
+
     // Locators
     private final By _txtUsername = By.xpath("//input[@id='username']");
     private final By _txtPassword = By.xpath("//input[@id='password']");
@@ -63,7 +64,6 @@ public class LoginPage extends GeneralPage {
     }
 
     // Methods
-
     public boolean verifyMyTicketTabDisplayed() {
         boolean flag = false;
         if (Constant.WEBDRIVER.findElements(_myTicketTab).size() != 0) {

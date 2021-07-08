@@ -1,5 +1,6 @@
 package PageObjects.Railway;
 
+import Common.Common.Utilities;
 import Common.Constant.Constant;
 import Common.Common.GenerateSuffixOfEmail;
 import org.openqa.selenium.By;
@@ -9,6 +10,7 @@ public class RegisterPage {
 
 
     public static String email;
+    Utilities utilities = new Utilities();
 
     // Locators
     private final By _emailTextBox = By.xpath("//input[@id='email']");
@@ -22,7 +24,6 @@ public class RegisterPage {
     private final By _PIDMsg = By.xpath("//li[4]/label[2]");
 
     // Elements
-
     public WebElement getEmail() {
         return Constant.WEBDRIVER.findElement(_emailTextBox);
     }
@@ -58,9 +59,9 @@ public class RegisterPage {
     public WebElement getMsgPassWordField() {
         return Constant.WEBDRIVER.findElement(_passwordFieldMsg);
     }
-    //Methods
 
-    public String getPIDFieldMsg(){
+    //Methods
+    public String getPIDFieldMsg() {
         return getMsgPIDField().getText();
     }
 
@@ -81,7 +82,7 @@ public class RegisterPage {
     }
 
     public String GenerateEmail() {
-        return "Railway+" + GenerateSuffixOfEmail.GenRandomString() + "@gmail.com";
+        return "Railway+" + utilities.GenRandomString() + "@gmail.com";
     }
 
     public String submitRegister(String email, String password, String confirmPW, String PID) {

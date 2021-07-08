@@ -19,7 +19,6 @@ public class ForgotPasswordPage {
     }
 
     // Methods
-
     public void sendInstructions(String email) {
         this.submitInstructions(email);
     }

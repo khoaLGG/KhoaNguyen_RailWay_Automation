@@ -18,7 +18,6 @@ public class GeneralPage {
 
 
     // Elements
-
     public WebElement getRegisterPage() {
         return Constant.WEBDRIVER.findElement(registerTab);
     }
@@ -47,7 +46,6 @@ public class GeneralPage {
     public boolean isLoggedIn() {
         return Constant.WEBDRIVER.findElements(tabLogout).size() != 0;
     }
-
 
     public String getWelcomeMessageText() {
         return this.getWelcomeMessage().getText();

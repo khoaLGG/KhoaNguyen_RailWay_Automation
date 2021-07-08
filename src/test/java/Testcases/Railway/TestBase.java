@@ -10,13 +10,6 @@ import org.testng.annotations.BeforeMethod;
 
 public class TestBase {
     HomePage homePage = new HomePage();
-    RegisterPage registerPage = new RegisterPage();
-    GeneralPage generalPage = new GeneralPage();
-    LoginPage loginPage = new LoginPage();
-    ChangePasswordPage changePasswordPage = new ChangePasswordPage();
-    ForgotPasswordPage forgotPasswordPage = new ForgotPasswordPage();
-    ServerError serverError = new ServerError();
-    BookTicketPage bookTicketPage = new BookTicketPage();
 
     @BeforeClass
     public void beforeClass() {

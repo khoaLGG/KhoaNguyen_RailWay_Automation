@@ -1,32 +1,15 @@
 package Testcases.Railway;
 
 import Common.Constant.Constant;
-import PageObjects.Railway.GeneralPage;
 import PageObjects.Railway.HomePage;
 import PageObjects.Railway.LoginPage;
-import PageObjects.Railway.RegisterPage;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
-public class LoginTest {
+public class LoginTest extends TestBase {
 
     HomePage homePage = new HomePage();
     LoginPage loginPage = new LoginPage();
-    RegisterPage registerPage = new RegisterPage();
-    GeneralPage generalPage = new GeneralPage();
-
-    @BeforeClass
-    public void beforeClass() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/Webdriver/Executables/chromedriver.exe");
-        Constant.WEBDRIVER = new ChromeDriver();
-        Constant.WEBDRIVER.manage().window().maximize();
-    }
-
-    @AfterClass
-    public void afterClass() {
-        //Constant.WEBDRIVER.quit();
-    }
 
     @BeforeMethod
     public void beforeMethod() {
@@ -69,7 +52,7 @@ public class LoginTest {
 
     @Test(description = "TC05_System shows message when user enters wrong password several times")
     public void TC05() {
-        loginPage.numberOfLogins(4);
+        loginPage.numberOfLogins(Constant.NUMBER_OF_LOGIN);
         String actualMsg = homePage.getErrorMsg();
         String expectedMsg = Constant.MSG_RUN_OUT_OF_TRY_LOGIN;
         Assert.assertEquals(actualMsg, expectedMsg, "error message not displayed as expected");
@@ -78,18 +61,13 @@ public class LoginTest {
     @Test(description = "TC06_Additional pages display once user logged in")
     public void TC06() {
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
-        boolean check = loginPage.verifyMyTicketTabDisplayed();
-        Assert.assertTrue(check, "\"My Ticket\" tab not showing");
-        check = loginPage.verifyChangePasswordTabDisplayed();
-        Assert.assertTrue(check, "\"Change Password\" tab not showing");
-        check = loginPage.verifyLogoutTabDisplayed();
-        Assert.assertTrue(check, "\"Logout\" tab not showing");
+        Assert.assertTrue(loginPage.verifyMyTicketTabDisplayed(), "\"My Ticket\" tab not showing");
+        Assert.assertTrue(loginPage.verifyChangePasswordTabDisplayed(), "\"Change Password\" tab not showing");
+        Assert.assertTrue(loginPage.verifyLogoutTabDisplayed(), "\"Logout\" tab not showing");
         loginPage.gotoMyTicketTab();
-        check = loginPage.isAtMyTicketPage();
-        Assert.assertTrue(check, "user can't navigate to My ticket page");
+        Assert.assertTrue(loginPage.isAtMyTicketPage(), "user can't navigate to My ticket page");
         loginPage.gotoChangePasswordPage();
-        check = loginPage.isAtChangePasswordPAge();
-        Assert.assertTrue(check, "user can't navigate to Change password page");
+        Assert.assertTrue(loginPage.isAtChangePasswordPAge(), "user can't navigate to Change password page");
     }
 
 

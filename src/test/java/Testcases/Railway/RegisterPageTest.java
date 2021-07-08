@@ -1,10 +1,17 @@
 package Testcases.Railway;
 
 import Common.Constant.Constant;
+import PageObjects.Railway.GeneralPage;
+import PageObjects.Railway.LoginPage;
+import PageObjects.Railway.RegisterPage;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 public class RegisterPageTest extends TestBase {
+
+    LoginPage loginPage = new LoginPage();
+    GeneralPage generalPage = new GeneralPage();
+    RegisterPage registerPage = new RegisterPage();
 
     @Test(description = "TC07 - User can create new account")
     public void TC07() {
@@ -39,8 +46,7 @@ public class RegisterPageTest extends TestBase {
                 "The message content is not displayed correctly");
     }
 
-    @Test(description = "TC10 - User can't create account with \"Confirm password\" " +
-                         "is not the same with \"Password\"")
+    @Test(description = "TC10 - User can't create account with \"Confirm password\" is not the same with \"Password\"")
     public void TC10() {
         generalPage.gotoRegisterPage();
         registerPage.register(

@@ -1,12 +1,18 @@
 package Testcases.Railway;
 
 import Common.Constant.Constant;
+import PageObjects.Railway.ChangePasswordPage;
+import PageObjects.Railway.GeneralPage;
+import PageObjects.Railway.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class ChangePasswordTest extends TestBase{
 
+    ChangePasswordPage changePasswordPage = new ChangePasswordPage();
+    LoginPage loginPage = new LoginPage();
+    GeneralPage generalPage = new GeneralPage();
 
     @BeforeMethod
     public void beforeMethod() {
