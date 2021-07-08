@@ -21,5 +21,6 @@ public class TimeTableTest extends TestBase{
     public void TC15(){
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
         generalPage.goToTimeTableTab();
+        
     }
 }

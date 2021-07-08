@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 public class RegisterPage {
 
 
-    public static String email;
     Utilities utilities = new Utilities();
 
     // Locators
