@@ -15,9 +15,12 @@ public class GeneralPage {
     private final By lblWelcomeMessage = By.xpath("//div[@class='account']/strong");
     private final By errorMessage = By.xpath("//div[@id='content']/p");
     private final By registerTab = By.xpath("//span[contains(.,'Register')]");
+    private final By timeTableTab = By.xpath("//span[contains(.,'Timetable')]");
 
 
     // Elements
+    public  WebElement getTimeTablePage(){ return Constant.WEBDRIVER.findElement(timeTableTab);}
+
     public WebElement getRegisterPage() {
         return Constant.WEBDRIVER.findElement(registerTab);
     }
@@ -43,6 +46,7 @@ public class GeneralPage {
     }
 
     // Methods
+
     public boolean isLoggedIn() {
         return Constant.WEBDRIVER.findElements(tabLogout).size() != 0;
     }
@@ -75,4 +79,7 @@ public class GeneralPage {
     }
 
 
+    public void goToTimeTableTab() {
+        this.getTimeTablePage().click();
+    }
 }
