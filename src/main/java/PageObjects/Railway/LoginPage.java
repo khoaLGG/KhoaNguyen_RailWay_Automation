@@ -111,7 +111,7 @@ public class LoginPage extends GeneralPage {
         return getMyTicketPage().getText().equals(myTickKetLbl);
     }
 
-    public void gotoMyTicketTab() {
+    public void gotoMyTicketPage() {
         this.getMyTicket().click();
     }
 

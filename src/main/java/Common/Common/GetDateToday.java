@@ -18,9 +18,7 @@ public class GetDateToday {
         c1.setTime(date);
         c1.roll(Calendar.DATE, 5);
         String result =  dateFormat.format(c1.getTime());
-        System.out.println(result);
         result = result.replace("-","/");
-        System.out.println(result);
 
         return result;
     }

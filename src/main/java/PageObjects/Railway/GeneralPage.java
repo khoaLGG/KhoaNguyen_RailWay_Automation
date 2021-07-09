@@ -79,7 +79,7 @@ public class GeneralPage {
     }
 
 
-    public void goToTimeTableTab() {
+    public void goToTimeTablePage() {
         this.getTimeTablePage().click();
     }
 }

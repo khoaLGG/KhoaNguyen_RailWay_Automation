@@ -26,7 +26,7 @@ public class TimeTableTest extends TestBase{
     @Test(description = "TC15 - User can open \"Book ticket\" page by clicking on \"Book ticket\" link in \"Train timetable\" page")
     public void TC15(){
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);
-        generalPage.goToTimeTableTab();
+        generalPage.goToTimeTablePage();
         timeTablePage.bookTicketFromTimeTablePage(Constant.DEPART_FROM, Constant.ARRIVE_AT);
         String actualMsg = bookTicketPage.getContentBookTicketPage();
         String expectedMsg = Constant.MSG_CONTENT_OF_BOOK_TICKET_PAGE;

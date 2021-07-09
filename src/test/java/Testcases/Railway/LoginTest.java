@@ -64,7 +64,7 @@ public class LoginTest extends TestBase {
         Assert.assertTrue(loginPage.verifyMyTicketTabDisplayed(), "\"My Ticket\" tab not showing");
         Assert.assertTrue(loginPage.verifyChangePasswordTabDisplayed(), "\"Change Password\" tab not showing");
         Assert.assertTrue(loginPage.verifyLogoutTabDisplayed(), "\"Logout\" tab not showing");
-        loginPage.gotoMyTicketTab();
+        loginPage.gotoMyTicketPage();
         Assert.assertTrue(loginPage.isAtMyTicketPage(), "user can't navigate to My ticket page");
         loginPage.gotoChangePasswordPage();
         Assert.assertTrue(loginPage.isAtChangePasswordPAge(), "user can't navigate to Change password page");

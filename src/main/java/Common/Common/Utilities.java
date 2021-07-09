@@ -18,6 +18,10 @@ public class Utilities {
         JavascriptExecutor je = (JavascriptExecutor) Constant.WEBDRIVER;
         je.executeScript("arguments[0].scrollIntoView(true);", element);
         element.click();
+
+        // keep method because i need research it again
+
+
     }
     public String getDate(){
         SimpleDateFormat dateFormat = new SimpleDateFormat("M-d-yyyy");
@@ -30,9 +34,7 @@ public class Utilities {
         c1.setTime(date);
         c1.roll(Calendar.DATE, 5);
         String result =  dateFormat.format(c1.getTime());
-        System.out.println(result);
         result = result.replace("-","/");
-        System.out.println(result);
 
         return result;
     }

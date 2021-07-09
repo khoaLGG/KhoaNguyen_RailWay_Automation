@@ -105,7 +105,6 @@ public class BookTicketPage {
 
     public void chooseArriveAt(String value) {
         this.getArriveAt().click();
-        System.out.println(value);
         Constant.WEBDRIVER.findElement(
                 By.xpath("//select[@name='ArriveStation']//option[text()='"+value+"']")).click();
     }
