@@ -1,9 +1,20 @@
 package PageObjects.Railway;
 
+import Common.Constant.Constant;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class TimeTablePage {
 
     // Locators
-    //td[text()='Huế']//following-sibling::td[text()='Sài Gòn']//following-sibling::td//a[text()='book ticket']
+    //Elements
+
+    //Methods
+    public String getDepartFromAndArriveAt(String departFrom, String arriveAt){
+        String text = "//td[text()='%s']//following-sibling::td[text()='%s']//following-sibling::td//a[text()='book ticket']";
+        return String.format(text, departFrom, arriveAt);
+    }
+    public void bookTicketFromTimeTablePage(String departFrom, String arriveAt){
+        Constant.WEBDRIVER.findElement(By.xpath(String.format(getDepartFromAndArriveAt(departFrom,arriveAt),departFrom,arriveAt))).click();
+    }
 }

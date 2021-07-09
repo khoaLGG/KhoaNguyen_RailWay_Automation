@@ -4,6 +4,7 @@ import Common.Common.Utilities;
 import Common.Constant.Constant;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 
 public class BookTicketPage {
@@ -11,16 +12,29 @@ public class BookTicketPage {
     Utilities utilities = new Utilities();
 
     // Locators
-    private final By bookTicketBtn = By.xpath("//input[@value='Book ticket']");
+    private final By SubmitBookTicketBtn = By.xpath("//input[@value='Book ticket']");
     private final By bookTicketSuccessMsg = By.xpath("//h1[contains(.,'Ticket Booked Successfully!')]");
+    private final By ContentBookTicketLbl = By.xpath("//h1[contains(.,'Book ticket')]");
+    private final By valueSelectedOfDepartFromDropbox = By.xpath("//select[@name = 'DepartStation']//option[@selected]");
+    private final By valueSelectedOfArriveAtDropbox = By.xpath("//select[@name = 'ArriveStation']//option[@selected]");
 
     // Elements
+    private WebElement getSelectedOfArriveAt(){
+        return Constant.WEBDRIVER.findElement(valueSelectedOfArriveAtDropbox);
+    }
+    public WebElement getSelectedOfDepartFrom(){
+        return Constant.WEBDRIVER.findElement(valueSelectedOfDepartFromDropbox);
+    }
+    public WebElement getContentBookTicket() {
+        return Constant.WEBDRIVER.findElement(ContentBookTicketLbl);
+    }
+
     public WebElement getBookTicketSuccess() {
         return Constant.WEBDRIVER.findElement(bookTicketSuccessMsg);
     }
 
     public WebElement getBookTicket() {
-        return Constant.WEBDRIVER.findElement(bookTicketBtn);
+        return Constant.WEBDRIVER.findElement(SubmitBookTicketBtn);
     }
 
     public WebElement getDepartDate() {
@@ -49,6 +63,17 @@ public class BookTicketPage {
     }
 
     // Methods
+
+    public String valueSelectedOfArriveAt(){
+        return getSelectedOfArriveAt().getText();
+    }
+    public String valueSelectedOfDepartStation(){
+        return getSelectedOfDepartFrom().getText();
+    }
+    public String getContentBookTicketPage(){
+        return getContentBookTicket().getText();
+    }
+
     public String getBookTicketSuccessMsg() {
         return getBookTicketSuccess().getText();
     }
@@ -96,5 +121,6 @@ public class BookTicketPage {
                 By.xpath("//select[@name='Date']//option[text()=\"" + utilities.getDate() + "\"]"))
                 .click();
     }
+
 
 }

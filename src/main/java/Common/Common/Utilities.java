@@ -49,4 +49,14 @@ public class Utilities {
         }
         return randomString ;
     }
+    public void test(){
+        String a = "a %s, l %s";
+        String b = String.format(a,"hihi","haha");
+        System.out.println(b);
+    }
+
+    public static void main(String[] args) {
+        Utilities a = new Utilities();
+        a.test();
+    }
 }
