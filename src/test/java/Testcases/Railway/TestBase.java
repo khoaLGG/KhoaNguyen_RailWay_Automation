@@ -21,7 +21,7 @@ public class TestBase {
 
     @AfterClass
     public void afterClass() {
-        //Constant.WEBDRIVER.quit();
+        Constant.WEBDRIVER.quit();
     }
 
     @BeforeMethod
@@ -33,6 +33,6 @@ public class TestBase {
     @AfterMethod
     public void afterMethod() {
         System.out.println("Post-condition");
-       // homePage.logout();
+        homePage.logout();
     }
 }
