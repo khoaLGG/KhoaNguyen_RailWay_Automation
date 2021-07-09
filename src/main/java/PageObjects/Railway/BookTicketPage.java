@@ -2,6 +2,7 @@ package PageObjects.Railway;
 
 import Common.Common.Utilities;
 import Common.Constant.Constant;
+import DataObject.BookTicket.BookTicket;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -77,41 +78,42 @@ public class BookTicketPage {
         return getBookTicketSuccess().getText();
     }
 
-    public void bookTicket() {
-        this.fillBookTicketInformation();
+    public void bookTicket(BookTicket value) {
+        this.fillBookTicketInformation(value);
         this.getBookTicket().click();
     }
 
-    private void fillBookTicketInformation() {
+    private void fillBookTicketInformation(BookTicket value) {
         this.chooseDepartDate();
-        this.chooseDepartFrom();
-        this.chooseArriveAt();
-        this.chooseTypeSeat();
-        this.chooseTicketAmount();
+        this.chooseDepartFrom(value.getDepartFrom());
+        this.chooseArriveAt(value.getArriveAt());
+        this.chooseTypeSeat(value.getSeatType());
+        this.chooseTicketAmount(value.getTicketAmount());
     }
 
-    public void chooseTicketAmount() {
+    public void chooseTicketAmount(String value) {
         this.getTicketAmount().click();
         Constant.WEBDRIVER.findElement(
-                By.xpath("//select[@name='TicketAmount']//option[text()='1']")).click();
+                By.xpath("//select[@name='TicketAmount']//option[text()='"+value+"']")).click();
     }
 
-    public void chooseTypeSeat() {
+    public void chooseTypeSeat(String value) {
         this.getSeatType().click();
         Constant.WEBDRIVER.findElement(
-                By.xpath("//select[@name='SeatType']//option[text()='Soft seat with air conditioner']")).click();
+                By.xpath("//select[@name='SeatType']//option[text()='"+value+"']")).click();
     }
 
-    public void chooseArriveAt() {
+    public void chooseArriveAt(String value) {
         this.getArriveAt().click();
+        System.out.println(value);
         Constant.WEBDRIVER.findElement(
-                By.xpath("//select[@name='ArriveStation']//option[text()='Nha Trang']")).click();
+                By.xpath("//select[@name='ArriveStation']//option[text()='"+value+"']")).click();
     }
 
-    public void chooseDepartFrom() {
+    public void chooseDepartFrom(String value) {
         this.getDepartFrom().click();
         Constant.WEBDRIVER.findElement(
-                By.xpath("//select[@name='DepartStation']//option[text()='Sài Gòn']")).click();
+                By.xpath("//select[@name='DepartStation']//option[text()='"+value+"']")).click();
     }
 
     public void chooseDepartDate() {
