@@ -13,9 +13,12 @@ public class RegisterPageTest extends TestBase {
     GeneralPage generalPage = new GeneralPage();
     RegisterPage registerPage = new RegisterPage();
 
-    @Test(description = "TC07 - User can create new account")
-    public void TC07() {
+    @BeforeMethod
+    public void bm() {
         generalPage.gotoRegisterPage();
+    }
+    @Test(description = "TC07 - User can create new account")
+    public void TC07()   {
         String email = registerPage.register(
                 registerPage.GenerateEmail(),
                 Constant.PASSWORD,
@@ -31,8 +34,7 @@ public class RegisterPageTest extends TestBase {
     }
 
     @Test(description = "User can't login with an account hasn't been activated")
-    public void TC08() {
-        generalPage.gotoRegisterPage();
+    public void TC08()   {
         String email = registerPage.register(
                 registerPage.GenerateEmail(),
                 Constant.PASSWORD,
@@ -47,8 +49,7 @@ public class RegisterPageTest extends TestBase {
     }
 
     @Test(description = "TC10 - User can't create account with \"Confirm password\" is not the same with \"Password\"")
-    public void TC10() {
-        generalPage.gotoRegisterPage();
+    public void TC10()   {
         registerPage.register(
                 registerPage.GenerateEmail(),
                 Constant.PASSWORD,
@@ -63,8 +64,7 @@ public class RegisterPageTest extends TestBase {
     }
 
     @Test(description = "TC11 - User can't create account while password and PID fields are empty")
-    public void TC11(){
-        generalPage.gotoRegisterPage();
+    public void TC11()   {
         registerPage.register(
                 registerPage.GenerateEmail(),
                 Constant.EMPTY_PASSWORD,

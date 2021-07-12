@@ -25,10 +25,10 @@ public class ForgotPasswordTest extends TestBase{
                 Constant.PASSWORD,
                 Constant.PASSWORD,
                 Constant.PID);
-        generalPage.goToLoginPage();
     }
     @Test(description = "TC12 - Errors display when password reset token is blank")
-    public void TC12(){
+    public void TC12() {
+        generalPage.goToLoginPage();
         loginPage.goToForgotPasswordPage();
         forgotPasswordPage.sendInstructions(email);
         Assert.assertFalse(serverError.verifyMailBoxDisplayed()
