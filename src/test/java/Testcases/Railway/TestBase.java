@@ -2,11 +2,16 @@ package Testcases.Railway;
 
 import Common.Constant.Constant;
 import PageObjects.Railway.*;
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
 
 public class TestBase {
     HomePage homePage = new HomePage();
@@ -16,12 +21,6 @@ public class TestBase {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/Webdriver/Executables/chromedriver.exe");
         Constant.WEBDRIVER = new ChromeDriver();
         Constant.WEBDRIVER.manage().window().maximize();
-        // E:\JavaCoBan\SeleniumLevel-1\src\main
-    }
-
-    @AfterClass
-    public void afterClass() {
-        //Constant.WEBDRIVER.quit();
     }
 
     @BeforeMethod
@@ -31,8 +30,12 @@ public class TestBase {
     }
 
     @AfterMethod
-    public void afterMethod() {
+    public void afterMethod(ITestResult result) {
         System.out.println("Post-condition");
-       // homePage.logout();
+        homePage.logout();
+    }
+    @AfterClass
+    public void afterClass() {
+        Constant.WEBDRIVER.quit();
     }
 }
