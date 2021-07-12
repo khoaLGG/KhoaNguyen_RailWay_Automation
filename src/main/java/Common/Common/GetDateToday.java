@@ -24,8 +24,8 @@ public class GetDateToday {
     }
 
     public static void main(String[] args) {
-        GetDateToday a = new GetDateToday();
-        System.out.println("//select[@name='Date']//option[text()=\""+a.getDate()+"\"]");
+        Utilities utilities = new Utilities();
+        System.out.println("//select[@name='Date']//option[text()=\""+utilities.getDate()+"\"]");
 
     }
 }

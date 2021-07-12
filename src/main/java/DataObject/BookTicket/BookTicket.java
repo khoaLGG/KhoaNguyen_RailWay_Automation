@@ -1,6 +1,7 @@
 package DataObject.BookTicket;
 
 import Common.Common.GetDateToday;
+import Common.Common.Utilities;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +9,7 @@ import lombok.Setter;
 @Setter
 public class BookTicket {
 
-    GetDateToday getDateToday = new GetDateToday();
+    Utilities utilities = new Utilities();
 
     private String departDate;
     private String departFrom;
@@ -18,7 +19,7 @@ public class BookTicket {
 
 
     public BookTicket(){
-        this.departDate = getDateToday.getDate();
+        this.departDate = utilities.getDate();
         this.departFrom = "Sài Gòn";
         this.arriveAt = "Nha Trang";
         this.seatType = "Soft bed with air conditioner";
