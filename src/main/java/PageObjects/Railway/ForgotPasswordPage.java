@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 public class ForgotPasswordPage {
     // Locators
     private final By emailAddressTextBox = By.xpath("//input[@id='email']");
-    private final By sendInstructions = By.xpath("//p[2]/input");
+    private final By sendInstructions = By.xpath("//input[@type='submit']");
 
     // Elements
     public WebElement getEmailAddress() {
