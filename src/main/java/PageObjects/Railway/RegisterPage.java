@@ -16,34 +16,34 @@ public class RegisterPage {
     private final By _passwordTextBox = By.xpath("//input[@id='password']");
     private final By _confirmPassWordTextBox = By.xpath("//input[@id='confirmPassword']");
     private final By _PIDOrPassPortNumberTextBox = By.xpath("//input[@id='pid']");
-    private final By _registerBtn = By.xpath("//p/input");
-    private final By _registerSuccessMsg = By.xpath("//p");
-    private final By _registerFailedMsg = By.xpath("//div[@id='content']/p[2]");
-    private final By _passwordFieldMsg = By.xpath("//label[2]");
-    private final By _PIDMsg = By.xpath("//li[4]/label[2]");
+    private final By _registerBtn = By.xpath("//input[@type='submit']");
+    private final By _registerSuccessMsg = By.xpath("//div[@id='content']/p");
+    private final By _registerFailedMsg = By.xpath("//p[@class='message error']");
+    private final By _passwordFieldMsg = By.xpath("//li[@class='password']/label[@class='validation-error']");
+    private final By _PIDMsg = By.xpath("//li[@class='pid-number']/label[@class='validation-error']");
 
     // Elements
-    public WebElement getEmail() {
+    public WebElement getEmailTextBoxElement() {
         return Constant.WEBDRIVER.findElement(_emailTextBox);
     }
 
-    public WebElement getPassword() {
+    public WebElement getPasswordTextBoxElement() {
         return Constant.WEBDRIVER.findElement(_passwordTextBox);
     }
 
-    public WebElement getConfirmPassword() {
+    public WebElement getConfirmPasswordTextBoxElement() {
         return Constant.WEBDRIVER.findElement(_confirmPassWordTextBox);
     }
 
-    public WebElement getPIDOrPassPortNumber() {
+    public WebElement getPIDOrPassPortNumberTextBoxElement() {
         return Constant.WEBDRIVER.findElement(_PIDOrPassPortNumberTextBox);
     }
 
-    public WebElement getRegister() {
+    public WebElement getRegisterBtnElement() {
         return Constant.WEBDRIVER.findElement(_registerBtn);
     }
 
-    public WebElement getMsgPIDField() {
+    public WebElement getMsgPIDFieldElement() {
         return Constant.WEBDRIVER.findElement(_PIDMsg);
     }
 
@@ -61,7 +61,7 @@ public class RegisterPage {
 
     //Methods
     public String getPIDFieldMsg() {
-        return getMsgPIDField().getText();
+        return getMsgPIDFieldElement().getText();
     }
 
     public String getPassWordFieldMsg() {
@@ -86,15 +86,15 @@ public class RegisterPage {
 
     public String submitRegister(String email, String password, String confirmPW, String PID) {
         this.fillRegisterInformation(email, password, confirmPW, PID);
-        this.getRegister().click();
+        this.getRegisterBtnElement().click();
         return email;
     }
 
     public void fillRegisterInformation(String email, String password, String confirmPW, String PID) {
-        this.getEmail().sendKeys(email);
-        this.getPassword().sendKeys(password);
-        this.getConfirmPassword().sendKeys(confirmPW);
-        this.getPIDOrPassPortNumber().sendKeys(PID);
+        this.getEmailTextBoxElement().sendKeys(email);
+        this.getPasswordTextBoxElement().sendKeys(password);
+        this.getConfirmPasswordTextBoxElement().sendKeys(confirmPW);
+        this.getPIDOrPassPortNumberTextBoxElement().sendKeys(PID);
     }
 
 }

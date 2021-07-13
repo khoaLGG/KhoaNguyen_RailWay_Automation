@@ -89,4 +89,5 @@ public class RegisterPageTest extends TestBase {
                 ,expectedMsg
                 ,"The message content of PID fields is not displayed correctly");
     }
+    
 }
