@@ -11,7 +11,7 @@ public class ChangePasswordPage {
     private final By newPasswordTextBox = By.xpath("//input[@id='newPassword']");
     private final By confirmPasswordTextBox = By.xpath("//input[@id='confirmPassword']");
     private final By changePasswordBtn = By.xpath("//input[@value='Change Password']");
-    private final By changePasswordSuccessMsg = By.xpath("//fieldset/p");
+    private final By changePasswordSuccessMsg = By.xpath("//p[@class='message success']");
 
     // Elements
     public WebElement getCurrentPassword() {
