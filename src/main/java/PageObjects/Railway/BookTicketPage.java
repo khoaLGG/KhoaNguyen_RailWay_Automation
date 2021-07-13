@@ -12,70 +12,70 @@ public class BookTicketPage {
     Utilities utilities = new Utilities();
 
     // Locators
-    private final By SubmitBookTicketBtn = By.xpath("//input[@value='Book ticket']");
+    private final By bookTicketBtn = By.xpath("//input[@value='Book ticket']");
     private final By bookTicketSuccessMsg = By.xpath("//h1[contains(.,'Ticket Booked Successfully!')]");
-    private final By ContentBookTicketLbl = By.xpath("//h1[contains(.,'Book ticket')]");
+    private final By bookTicketLbl = By.xpath("//h1[contains(.,'Book ticket')]");
     private final By valueSelectedOfDepartFromDropbox = By.xpath("//select[@name = 'DepartStation']//option[@selected]");
     private final By valueSelectedOfArriveAtDropbox = By.xpath("//select[@name = 'ArriveStation']//option[@selected]");
+    private final By departDateDropbox = By.xpath("//select[@name='Date']");
+    private final By departFromDropbox = By.xpath("//select[@name='DepartStation']");
+    private final By arriveAtDropbox = By.xpath("//select[@name='ArriveStation']");
+    private final By seatTypeDropbox = By.xpath("//select[@name='SeatType']");
+    private final By ticketAmountDropbox = By.xpath("//select[@name='TicketAmount']");
 
     // Elements
-    private WebElement getSelectedOfArriveAt(){
+    private WebElement getSelectedOfArriveAtElement(){
         return Constant.WEBDRIVER.findElement(valueSelectedOfArriveAtDropbox);
     }
-    public WebElement getSelectedOfDepartFrom(){
+    public WebElement getSelectedOfDepartFromElement(){
         return Constant.WEBDRIVER.findElement(valueSelectedOfDepartFromDropbox);
     }
     public WebElement getContentBookTicket() {
-        return Constant.WEBDRIVER.findElement(ContentBookTicketLbl);
+        return Constant.WEBDRIVER.findElement(bookTicketLbl);
     }
 
-    public WebElement getBookTicketSuccess() {
+    public WebElement getContentBookTicketSuccess() {
         return Constant.WEBDRIVER.findElement(bookTicketSuccessMsg);
     }
 
     public WebElement getBookTicket() {
-        return Constant.WEBDRIVER.findElement(SubmitBookTicketBtn);
+        return Constant.WEBDRIVER.findElement(bookTicketBtn);
     }
 
-    public WebElement getDepartDate() {
-        return Constant.WEBDRIVER.findElement(By
-                .xpath("//select[@name='Date']"));
+    public WebElement getDepartDateDropboxElement() {
+        return Constant.WEBDRIVER.findElement(departDateDropbox);
     }
 
-    public WebElement getDepartFrom() {
-        return Constant.WEBDRIVER.findElement(By
-                .xpath("//select[@name='DepartStation']"));
+    public WebElement getDepartFromDropboxElement() {
+        return Constant.WEBDRIVER.findElement(departFromDropbox);
     }
 
-    public WebElement getArriveAt() {
-        return Constant.WEBDRIVER.findElement(By
-                .xpath("//select[@name='ArriveStation']"));
+    public WebElement getArriveAtDropboxElement() {
+        return Constant.WEBDRIVER.findElement(arriveAtDropbox);
     }
 
-    public WebElement getSeatType() {
-        return Constant.WEBDRIVER.findElement(By
-                .xpath("//select[@name='SeatType']"));
+    public WebElement getSeatTypeDropboxElement() {
+        return Constant.WEBDRIVER.findElement(seatTypeDropbox);
     }
 
-    public WebElement getTicketAmount() {
-        return Constant.WEBDRIVER.findElement(By
-                .xpath("//select[@name='TicketAmount']"));
+    public WebElement getTicketAmountElement() {
+        return Constant.WEBDRIVER.findElement(ticketAmountDropbox);
     }
 
     // Methods
 
     public String valueSelectedOfArriveAt(){
-        return getSelectedOfArriveAt().getText();
+        return getSelectedOfArriveAtElement().getText();
     }
     public String valueSelectedOfDepartStation(){
-        return getSelectedOfDepartFrom().getText();
+        return getSelectedOfDepartFromElement().getText();
     }
     public String getContentBookTicketPage(){
         return getContentBookTicket().getText();
     }
 
     public String getBookTicketSuccessMsg() {
-        return getBookTicketSuccess().getText();
+        return getContentBookTicketSuccess().getText();
     }
 
     public void bookTicket(BookTicket value) {
@@ -92,31 +92,31 @@ public class BookTicketPage {
     }
 
     public void chooseTicketAmount(String value) {
-        this.getTicketAmount().click();
+        this.getTicketAmountElement().click();
         Constant.WEBDRIVER.findElement(
                 By.xpath("//select[@name='TicketAmount']//option[text()='"+value+"']")).click();
     }
 
     public void chooseTypeSeat(String value) {
-        this.getSeatType().click();
+        this.getSeatTypeDropboxElement().click();
         Constant.WEBDRIVER.findElement(
                 By.xpath("//select[@name='SeatType']//option[text()='"+value+"']")).click();
     }
 
     public void chooseArriveAt(String value) {
-        this.getArriveAt().click();
+        this.getArriveAtDropboxElement().click();
         Constant.WEBDRIVER.findElement(
                 By.xpath("//select[@name='ArriveStation']//option[text()='"+value+"']")).click();
     }
 
     public void chooseDepartFrom(String value) {
-        this.getDepartFrom().click();
+        this.getDepartFromDropboxElement().click();
         Constant.WEBDRIVER.findElement(
                 By.xpath("//select[@name='DepartStation']//option[text()='"+value+"']")).click();
     }
 
     public void chooseDepartDate() {
-        this.getDepartDate().click();
+        this.getDepartDateDropboxElement().click();
         Constant.WEBDRIVER.findElement(
                 By.xpath("//select[@name='Date']//option[text()=\"" + utilities.getDate() + "\"]"))
                 .click();

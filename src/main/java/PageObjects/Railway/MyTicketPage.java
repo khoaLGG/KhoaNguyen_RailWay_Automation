@@ -8,19 +8,18 @@ import org.openqa.selenium.WebElement;
 
 public class MyTicketPage {
 
-    GetDateToday getDateToday = new GetDateToday();
 
     // Locators
     private final By position = By.xpath("//table[@class='MyTable']//tbody//tr[last()]//td");
 
     //Elements
-    public WebElement getPosition() {
+    public WebElement getPositionElement() {
         return Constant.WEBDRIVER.findElement(position);
     }
 
     //Methods
     public String getPositionText(){
-        return this.getPosition().getText();
+        return this.getPositionElement().getText();
     }
 
     public String getTicketNeededDelete(String departFrom, String arriveAt, String seatType, String date){
