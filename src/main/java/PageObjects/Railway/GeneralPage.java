@@ -16,13 +16,17 @@ public class GeneralPage {
     private final By errorMessage = By.xpath("//div[@id='content']/p");
     private final By registerTab = By.xpath("//span[contains(.,'Register')]");
     private final By timeTableTab = By.xpath("//span[contains(.,'Timetable')]");
-
+    private final By ticketPriceTab = By.xpath("//span[contains(.,'Ticket price')]");
 
     // Elements
     public  WebElement getTimeTablePage(){ return Constant.WEBDRIVER.findElement(timeTableTab);}
 
     public WebElement getRegisterPage() {
         return Constant.WEBDRIVER.findElement(registerTab);
+    }
+
+    public WebElement getTicketPriceTabElement(){
+        return Constant.WEBDRIVER.findElement(ticketPriceTab);
     }
 
     protected WebElement getLogin() {
@@ -45,7 +49,9 @@ public class GeneralPage {
         return Constant.WEBDRIVER.findElement(errorMessage);
     }
 
+
     // Methods
+
 
     public boolean isLoggedIn() {
         return Constant.WEBDRIVER.findElements(tabLogout).size() != 0;
@@ -63,6 +69,9 @@ public class GeneralPage {
         this.getLogin().click();
     }
 
+    public void goToTicketPricePage(){
+        this.getTicketPriceTabElement().click();
+    }
 
     public void gotoRegisterPage() {
         this.getRegisterPage().click();

@@ -52,8 +52,8 @@ public class Utilities {
         return randomString ;
     }
     public void test(){
-        String a = "a %s, l %s";
-        String b = String.format(a,"hihi","haha");
+        String a = "//li[text()='%s to %s']/parent::td//following-sibling::td//a[text()='Check Price']";
+        String b = String.format(a,"Sài Gòn","Nha Trang");
         System.out.println(b);
     }
 

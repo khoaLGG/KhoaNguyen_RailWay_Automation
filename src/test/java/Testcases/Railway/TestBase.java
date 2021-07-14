@@ -32,10 +32,10 @@ public class TestBase {
     @AfterMethod
     public void afterMethod(ITestResult result) {
         System.out.println("Post-condition");
-        homePage.logout();
+        //homePage.logout();
     }
     @AfterClass
     public void afterClass() {
-        Constant.WEBDRIVER.quit();
+        //Constant.WEBDRIVER.quit();
     }
 }

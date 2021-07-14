@@ -15,6 +15,6 @@ public class TimeTablePage {
         return String.format(text, departFrom, arriveAt);
     }
     public void bookTicketFromTimeTablePage(String departFrom, String arriveAt){
-        Constant.WEBDRIVER.findElement(By.xpath(String.format(getDepartFromAndArriveAt(departFrom,arriveAt),departFrom,arriveAt))).click();
+        Constant.WEBDRIVER.findElement(By.xpath(getDepartFromAndArriveAt(departFrom,arriveAt))).click();
     }
 }

@@ -22,8 +22,11 @@ public class BookTicketPage {
     private final By arriveAtDropbox = By.xpath("//select[@name='ArriveStation']");
     private final By seatTypeDropbox = By.xpath("//select[@name='SeatType']");
     private final By ticketAmountDropbox = By.xpath("//select[@name='TicketAmount']");
-
+    private final By columnNameDepartStation = By.xpath("//tr//td[position()=1]");
     // Elements
+    private WebElement getColumnNameDepartStation(){
+        return Constant.WEBDRIVER.findElement(columnNameDepartStation);
+    }
     private WebElement getSelectedOfArriveAtElement(){
         return Constant.WEBDRIVER.findElement(valueSelectedOfArriveAtDropbox);
     }
@@ -64,6 +67,9 @@ public class BookTicketPage {
 
     // Methods
 
+    public String getPositionOfDepartFromColumn(){
+        return getColumnNameDepartStation().getText();
+    }
     public String valueSelectedOfArriveAt(){
         return getSelectedOfArriveAtElement().getText();
     }
