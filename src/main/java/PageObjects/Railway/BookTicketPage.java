@@ -22,10 +22,26 @@ public class BookTicketPage {
     private final By arriveAtDropbox = By.xpath("//select[@name='ArriveStation']");
     private final By seatTypeDropbox = By.xpath("//select[@name='SeatType']");
     private final By ticketAmountDropbox = By.xpath("//select[@name='TicketAmount']");
-    private final By columnNameDepartStation = By.xpath("//tr//td[position()=1]");
+    private final By valueOfDepartStation = By.xpath("//tr//td[position()=1]"); /* same xpath :  //tr//td[1]  */
+    private final By valueOfArriveStation = By.xpath("//tr//td[2]");
+    private final By valueOfSeatType = By.xpath("//tr//td[3]");
+    private final By valueOfDepartDate = By.xpath("//tr//td[4]");
+    private final By valueOfAmount = By.xpath("//tr//td[7]");
     // Elements
-    private WebElement getColumnNameDepartStation(){
-        return Constant.WEBDRIVER.findElement(columnNameDepartStation);
+    private WebElement getValueOfAmountElement(){
+        return Constant.WEBDRIVER.findElement(valueOfAmount);
+    }
+    private WebElement getValueOfDepartDateElement(){
+        return Constant.WEBDRIVER.findElement(valueOfDepartDate);
+    }
+    private WebElement getValueOfSeatTypeElement(){
+        return Constant.WEBDRIVER.findElement(valueOfSeatType);
+    }
+    private WebElement getValueOfArriveStationElement(){
+        return Constant.WEBDRIVER.findElement(valueOfArriveStation);
+    }
+    private WebElement getValueOfDepartStationElement(){
+        return Constant.WEBDRIVER.findElement(valueOfDepartStation);
     }
     private WebElement getSelectedOfArriveAtElement(){
         return Constant.WEBDRIVER.findElement(valueSelectedOfArriveAtDropbox);
@@ -66,9 +82,20 @@ public class BookTicketPage {
     }
 
     // Methods
-
-    public String getPositionOfDepartFromColumn(){
-        return getColumnNameDepartStation().getText();
+    public String getValueTicketOfAmountColumn(){
+        return getValueOfAmountElement().getText();
+    }
+    public String getValueTicketOfDepartDateColumn(){
+        return getValueOfDepartDateElement().getText();
+    }
+    public String getValueTicketOfSeatTypeColumn(){
+        return getValueOfSeatTypeElement().getText();
+    }
+    public String getValueTicketOfArriveAtColumn(){
+        return getValueOfArriveStationElement().getText();
+    }
+    public String getValueTicketOfDepartFromColumn(){
+        return getValueOfDepartStationElement().getText();
     }
     public String valueSelectedOfArriveAt(){
         return getSelectedOfArriveAtElement().getText();
@@ -124,7 +151,7 @@ public class BookTicketPage {
     public void chooseDepartDate() {
         this.getDepartDateDropboxElement().click();
         Constant.WEBDRIVER.findElement(
-                By.xpath("//select[@name='Date']//option[text()=\"" + utilities.getDate() + "\"]"))
+                By.xpath("//select[@name='Date']//option[text()='" + utilities.getDate() + "']"))
                 .click();
     }
 

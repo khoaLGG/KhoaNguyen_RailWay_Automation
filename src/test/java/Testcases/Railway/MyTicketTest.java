@@ -25,7 +25,6 @@ public class MyTicketTest extends TestBase {
         homePage.goToLoginPage();
     }
 
-
     @Test(description = "TC16 - User can cancel a ticket")
     public void TC16() throws InterruptedException {
         loginPage.login(Constant.USERNAME, Constant.PASSWORD);

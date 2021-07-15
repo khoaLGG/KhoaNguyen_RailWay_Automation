@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="classes">
+<suite name="Suite" >
     <listeners>
         <listener class-name="Testcases.ExtentReport.Listeners"></listener>
     </listeners>
-    <test name="Test" thread-count="2">
+    <test name="Test" >
         <classes>
             <class name="Testcases.Railway.ForgotPasswordTest"></class>
             <class name="Testcases.Railway.BookTicketTest"></class>
+            <class name="Testcases.Railway.RegisterPageTest"></class>
+            <class name="Testcases.Railway.MyTicketTest"></class>
+            <class name="Testcases.Railway.LoginTest"></class>
+            <class name="Testcases.Railway.ChangePasswordTest"></class>
+            <class name="Testcases.Railway.TimeTableTest"></class>
         </classes>
     </test>
 </suite>

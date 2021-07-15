@@ -21,6 +21,5 @@ public class TicketPriceTest extends TestBase {
     @Test
     public void TC_test(){
         ticketPricePage.checkPriceFromTicketPricePage(Constant.DEPART_FROM, Constant.ARRIVE_AT);
-
     }
 }

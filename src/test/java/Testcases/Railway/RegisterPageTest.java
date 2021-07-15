@@ -30,7 +30,7 @@ public class RegisterPageTest extends TestBase {
                 "The message content is not displayed correctly");
     }
 
-    @Test(description = "User can't login with an account hasn't been activated")
+    @Test(description = "TC08 - User can't login with an account hasn't been activated")
     public void TC08() {
         generalPage.gotoRegisterPage();
         String email = registerPage.register(
@@ -89,5 +89,4 @@ public class RegisterPageTest extends TestBase {
                 ,expectedMsg
                 ,"The message content of PID fields is not displayed correctly");
     }
-    
 }

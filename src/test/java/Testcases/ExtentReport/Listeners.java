@@ -13,32 +13,29 @@ public class Listeners  implements ITestListener {
 
     ExtentReports extent = ExtentReporterNG.extentReportGenerator();
     ExtentTest test;
-    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
     @Override
     public void onTestStart(ITestResult result) {
-        test = extent.createTest(result.getMethod().getMethodName());
-        extentTest.set(test);
+        test = extent.createTest(result.getMethod().getDescription());
 
     }
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        extentTest.get().log(Status.PASS,"Successful");
+        test.log(Status.PASS,"Successful");
         test.pass(MarkupHelper.createLabel(iTestResult.getName()+"Test case passed", ExtentColor.GREEN));
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
         test.fail(MarkupHelper.createLabel(result.getName()+"Test case failed", ExtentColor.RED));
-        extentTest.get().fail(result.getThrowable());
+        test.fail(result.getThrowable());
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-        extentTest.get().log(Status.SKIP,"Blocked");
+        test.log(Status.SKIP,"Blocked");
         test.fail(MarkupHelper.createLabel(iTestResult.getName()+"Test case blocked ", ExtentColor.YELLOW));
         test.fail(iTestResult.getThrowable());
-
     }
 
     @Override

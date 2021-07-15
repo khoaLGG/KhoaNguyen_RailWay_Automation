@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 public class ChangePasswordPage {
 
     // Locators
-    private final By currentPasswordTextBox = By.xpath("//input[@id='currentPassword']");
-    private final By newPasswordTextBox = By.xpath("//input[@id='newPassword']");
-    private final By confirmPasswordTextBox = By.xpath("//input[@id='confirmPassword']");
+    private final By currentPasswordTextBox = By.id("currentPassword");
+    private final By newPasswordTextBox = By.id("newPassword");
+    private final By confirmPasswordTextBox = By.id("confirmPassword");
     private final By changePasswordBtn = By.xpath("//input[@value='Change Password']");
     private final By changePasswordSuccessMsg = By.xpath("//p[@class='message success']");
 
