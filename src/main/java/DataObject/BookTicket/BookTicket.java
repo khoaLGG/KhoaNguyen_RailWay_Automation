@@ -19,10 +19,10 @@ public class BookTicket {
 
     public BookTicket(){
         this.departDate = utilities.getDate();
-        this.departFrom = "Sài Gòn";
-        this.arriveAt = "Nha Trang";
+        this.departFrom = "Huế";
+        this.arriveAt = "Quảng Ngãi";
         this.seatType = "Soft bed with air conditioner";
-        this.ticketAmount = "1";
+        this.ticketAmount = "3";
     }
 
 }

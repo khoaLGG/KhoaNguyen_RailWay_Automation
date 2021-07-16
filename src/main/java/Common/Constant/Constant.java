@@ -23,6 +23,8 @@ public class Constant {
     public static final String MSG_PASSWORD_FIELD = "Invalid password length";
     public static final String MSG_PID_FIELD = "Invalid ID length";
     public static final String MSG_CHANGE_PASSWORD_SUCCESS = "Your password has been updated!";
+    public static final String MSG_NO_RESULT_WHEN_FILTER = "Sorry, can't find any results that match your filters.\n" +
+            "Please change the filters and try again.";
     public static String MSG_WELCOME_USER = "Welcome %s";
     public static String MSG_REGISTER_SUCCESSFULLY = "Thank you for registering your account";
     public static String MSG_CONTENT_OF_BOOK_TICKET_PAGE = "Book ticket";

@@ -3,6 +3,7 @@ package PageObjects.Railway;
 import Common.Common.Utilities;
 import Common.Constant.Constant;
 import DataObject.BookTicket.BookTicket;
+import DataObject.DepartStation.DepartStation;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -10,7 +11,8 @@ import org.openqa.selenium.WebElement;
 public class BookTicketPage {
 
     Utilities utilities = new Utilities();
-
+    GeneralPage generalPage = new GeneralPage();
+    String [] a = DepartStation.departStation();
     // Locators
     private final By bookTicketBtn = By.xpath("//input[@value='Book ticket']");
     private final By bookTicketSuccessMsg = By.xpath("//h1[contains(.,'Ticket Booked Successfully!')]");
@@ -106,19 +108,42 @@ public class BookTicketPage {
     public String getContentBookTicketPage(){
         return getContentBookTicket().getText();
     }
-
     public String getBookTicketSuccessMsg() {
         return getContentBookTicketSuccess().getText();
     }
 
-    public void bookTicket(BookTicket value) {
+    public void bookTicket(BookTicket value) throws InterruptedException {
         this.fillBookTicketInformation(value);
         this.getBookTicket().click();
+
+    }
+    public void bookTicketSeveralTime(BookTicket value, int times) throws InterruptedException {
+    for( int i=1; i<=times; i++) {
+        this.fillBookTicketInformation(value, a[i]);
+        this.getBookTicket().click();
+        generalPage.goToBookTicket();
     }
 
-    private void fillBookTicketInformation(BookTicket value) {
+    }
+    private void fillBookTicketInformation(BookTicket value , String str) throws InterruptedException {
+        this.chooseDepartDate();
+        this.chooseDepartFrom(str);
+        Thread.sleep(3000);
+        this.chooseTypeSeat(value.getSeatType());
+        this.chooseTicketAmount("1");
+    }
+    public void chooseDepartDate(int times) {
+
+        this.getDepartDateDropboxElement().click();
+        Constant.WEBDRIVER.findElement(
+                By.xpath("//select[@name='Date']//option[text()='" + utilities.getDate(times) + "']"))
+                .click();
+
+    }
+    private void fillBookTicketInformation(BookTicket value) throws InterruptedException {
         this.chooseDepartDate();
         this.chooseDepartFrom(value.getDepartFrom());
+        Thread.sleep(3000);
         this.chooseArriveAt(value.getArriveAt());
         this.chooseTypeSeat(value.getSeatType());
         this.chooseTicketAmount(value.getTicketAmount());
@@ -154,6 +179,4 @@ public class BookTicketPage {
                 By.xpath("//select[@name='Date']//option[text()='" + utilities.getDate() + "']"))
                 .click();
     }
-
-
 }

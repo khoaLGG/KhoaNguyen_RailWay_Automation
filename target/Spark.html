@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Railway Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">thg 7 15, 2021 05:00:23 CH</span></a>
+<a href="#"><span class="badge badge-primary">thg 7 16, 2021 03:34:46 CH</span></a>
 </li>
 </ul>
 </div>
@@ -45,11 +45,6 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
-</a>
-</li>
-<li class="nav-item dropdown" onclick="toggleView('exception-view')">
-<a id="nav-exception" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -72,7 +67,6 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
-<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -80,27 +74,27 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
-          <div class="status-avatar fail-bg">
-            <i class="fa fa-times text-white"></i>
+          <div class="status-avatar pass-bg">
+            <i class="fa fa-check text-white"></i>
           </div>
           <div class="test-detail">
             <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC12 - Errors display when password reset token is blank</p>
-            <p class="text-sm"><span>17:00:59 CH</span> / <span>2,789 secs</span></p>
+            <p class="name">TC01 - User can book 1 ticket at a time</p>
+            <p class="text-sm"><span>15:34:59 CH</span> / <span>9,81 secs</span></p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
 <div class='float-right'><span class='badge badge-default'>#test-id=1</span></div>
-<h5 class="test-status text-fail">TC12 - Errors display when password reset token is blank</h5>
-<span class='badge badge-success'>07.15.2021 17:00:59</span>
-<span class='badge badge-danger'>07.15.2021 17:01:01</span>
-<span class='badge badge-default'>2,789 secs</span>
+<h5 class="test-status text-pass">TC01 - User can book 1 ticket at a time</h5>
+<span class='badge badge-success'>07.16.2021 15:34:59</span>
+<span class='badge badge-danger'>07.16.2021 15:35:09</span>
+<span class='badge badge-default'>9,81 secs</span>
 </div>
 </div>
 </div><div class="detail-body mt-4">
@@ -108,47 +102,17 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:01:01</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:35:09</td>
         <td>
-          <span class='badge white-text red'>TC12Test case failed</span>
+          Successful
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:01:01</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:35:09</td>
         <td>
-          <textarea readonly class="code-block">java.lang.AssertionError: this testcase was blocked by open mailbox step expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertFalse(Assert.java:65)
-	at Testcases.Railway.ForgotPasswordTest.TC12(ForgotPasswordTest.java:34)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-</textarea>
-          
+          <span class='badge white-text green'>TC01Test case passed</span>
         </td>
       </tr>
   </tbody>
@@ -156,27 +120,27 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="fail" test-id="2"
+        <li class="test-item"  status="pass" test-id="2"
           author=""
           tag=""
           device="">
-          <div class="status-avatar fail-bg">
-            <i class="fa fa-times text-white"></i>
+          <div class="status-avatar pass-bg">
+            <i class="fa fa-check text-white"></i>
           </div>
           <div class="test-detail">
             <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC13 - Errors display if password and confirm password don't match when resetting password </p>
-            <p class="text-sm"><span>17:01:06 CH</span> / <span>2,44 secs</span></p>
+            <p class="name">TC02 - User can filter "Manage ticket" table with Depart Station</p>
+            <p class="text-sm"><span>15:35:14 CH</span> / <span>46,11 secs</span></p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
 <div class='float-right'><span class='badge badge-default'>#test-id=2</span></div>
-<h5 class="test-status text-fail">TC13 - Errors display if password and confirm password don't match when resetting password </h5>
-<span class='badge badge-success'>07.15.2021 17:01:06</span>
-<span class='badge badge-danger'>07.15.2021 17:01:08</span>
-<span class='badge badge-default'>2,44 secs</span>
+<h5 class="test-status text-pass">TC02 - User can filter "Manage ticket" table with Depart Station</h5>
+<span class='badge badge-success'>07.16.2021 15:35:14</span>
+<span class='badge badge-danger'>07.16.2021 15:36:00</span>
+<span class='badge badge-default'>46,11 secs</span>
 </div>
 </div>
 </div><div class="detail-body mt-4">
@@ -184,47 +148,17 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:01:08</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:36:00</td>
         <td>
-          <span class='badge white-text red'>TC13Test case failed</span>
+          Successful
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:01:08</td>
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>15:36:00</td>
         <td>
-          <textarea readonly class="code-block">java.lang.AssertionError: this testcase was blocked by open mailbox step expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertFalse(Assert.java:65)
-	at Testcases.Railway.ForgotPasswordTest.TC13(ForgotPasswordTest.java:41)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-</textarea>
-          
+          <span class='badge white-text green'>TC02Test case passed</span>
         </td>
       </tr>
   </tbody>
@@ -241,18 +175,18 @@
           </div>
           <div class="test-detail">
             <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC04 - Login page displays when un-logged User clicks on Book ticket tab</p>
-            <p class="text-sm"><span>17:01:19 CH</span> / <span>1,869 secs</span></p>
+            <p class="name">Error displays when user applies filter with un-existed value of "Status" in "Manage ticket" table</p>
+            <p class="text-sm"><span>15:36:06 CH</span> / <span>43,943 secs</span></p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
 <div class='float-right'><span class='badge badge-default'>#test-id=3</span></div>
-<h5 class="test-status text-pass">TC04 - Login page displays when un-logged User clicks on Book ticket tab</h5>
-<span class='badge badge-success'>07.15.2021 17:01:19</span>
-<span class='badge badge-danger'>07.15.2021 17:01:21</span>
-<span class='badge badge-default'>1,869 secs</span>
+<h5 class="test-status text-pass">Error displays when user applies filter with un-existed value of "Status" in "Manage ticket" table</h5>
+<span class='badge badge-success'>07.16.2021 15:36:06</span>
+<span class='badge badge-danger'>07.16.2021 15:36:50</span>
+<span class='badge badge-default'>43,943 secs</span>
 </div>
 </div>
 </div><div class="detail-body mt-4">
@@ -261,708 +195,16 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:01:21</td>
+        <td>15:36:50</td>
         <td>
           Successful
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:01:21</td>
-        <td>
-          <span class='badge white-text green'>TC04Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="4"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC14 - User can book 1 ticket at a time</p>
-            <p class="text-sm"><span>17:01:22 CH</span> / <span>7,254 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=4</span></div>
-<h5 class="test-status text-pass">TC14 - User can book 1 ticket at a time</h5>
-<span class='badge badge-success'>07.15.2021 17:01:22</span>
-<span class='badge badge-danger'>07.15.2021 17:01:30</span>
-<span class='badge badge-default'>7,254 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:01:30</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:01:30</td>
-        <td>
-          <span class='badge white-text green'>TC14Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="5"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar fail-bg">
-            <i class="fa fa-times text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC07 - User can create new account</p>
-            <p class="text-sm"><span>17:01:43 CH</span> / <span>3,365 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=5</span></div>
-<h5 class="test-status text-fail">TC07 - User can create new account</h5>
-<span class='badge badge-success'>07.15.2021 17:01:43</span>
-<span class='badge badge-danger'>07.15.2021 17:01:46</span>
-<span class='badge badge-default'>3,365 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:01:46</td>
-        <td>
-          <span class='badge white-text red'>TC07Test case failed</span>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:01:46</td>
-        <td>
-          <textarea readonly class="code-block">java.lang.AssertionError: The message content is not displayed correctly expected [Thank you for registering your account] but found [You're here]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:453)
-	at Testcases.Railway.RegisterPageTest.TC07(RegisterPageTest.java:27)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-</textarea>
-          
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="6"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar fail-bg">
-            <i class="fa fa-times text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC08 - User can't login with an account hasn't been activated</p>
-            <p class="text-sm"><span>17:01:47 CH</span> / <span>6,089 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=6</span></div>
-<h5 class="test-status text-fail">TC08 - User can't login with an account hasn't been activated</h5>
-<span class='badge badge-success'>07.15.2021 17:01:47</span>
-<span class='badge badge-danger'>07.15.2021 17:01:53</span>
-<span class='badge badge-default'>6,089 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:01:53</td>
-        <td>
-          <span class='badge white-text red'>TC08Test case failed</span>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:01:53</td>
-        <td>
-          <textarea readonly class="code-block">java.lang.AssertionError: User can login success when account hasn't been activated expected [false] but found [true]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertFalse(Assert.java:65)
-	at Testcases.Railway.RegisterPageTest.TC08(RegisterPageTest.java:43)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-</textarea>
-          
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="7"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC10 - User can't create account with "Confirm password" is not the same with "Password"</p>
-            <p class="text-sm"><span>17:01:56 CH</span> / <span>2,579 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=7</span></div>
-<h5 class="test-status text-pass">TC10 - User can't create account with "Confirm password" is not the same with "Password"</h5>
-<span class='badge badge-success'>07.15.2021 17:01:56</span>
-<span class='badge badge-danger'>07.15.2021 17:01:58</span>
-<span class='badge badge-default'>2,579 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:01:58</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:01:58</td>
-        <td>
-          <span class='badge white-text green'>TC10Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="8"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC11 - User can't create account while password and PID fields are empty</p>
-            <p class="text-sm"><span>17:01:59 CH</span> / <span>2,551 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=8</span></div>
-<h5 class="test-status text-pass">TC11 - User can't create account while password and PID fields are empty</h5>
-<span class='badge badge-success'>07.15.2021 17:01:59</span>
-<span class='badge badge-danger'>07.15.2021 17:02:01</span>
-<span class='badge badge-default'>2,551 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:01</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:01</td>
-        <td>
-          <span class='badge white-text green'>TC11Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="9"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC16 - User can cancel a ticket</p>
-            <p class="text-sm"><span>17:02:14 CH</span> / <span>11,522 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=9</span></div>
-<h5 class="test-status text-pass">TC16 - User can cancel a ticket</h5>
-<span class='badge badge-success'>07.15.2021 17:02:14</span>
-<span class='badge badge-danger'>07.15.2021 17:02:25</span>
-<span class='badge badge-default'>11,522 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:25</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:25</td>
-        <td>
-          <span class='badge white-text green'>TC16Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="10"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC01 - User can log into Railway with valid username and password</p>
-            <p class="text-sm"><span>17:02:41 CH</span> / <span>2,043 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=10</span></div>
-<h5 class="test-status text-pass">TC01 - User can log into Railway with valid username and password</h5>
-<span class='badge badge-success'>07.15.2021 17:02:41</span>
-<span class='badge badge-danger'>07.15.2021 17:02:43</span>
-<span class='badge badge-default'>2,043 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:43</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:43</td>
-        <td>
-          <span class='badge white-text green'>TC01Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="11"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC02_User can't login with blank Username textbox</p>
-            <p class="text-sm"><span>17:02:46 CH</span> / <span>1,583 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=11</span></div>
-<h5 class="test-status text-pass">TC02_User can't login with blank Username textbox</h5>
-<span class='badge badge-success'>07.15.2021 17:02:46</span>
-<span class='badge badge-danger'>07.15.2021 17:02:48</span>
-<span class='badge badge-default'>1,583 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:48</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:48</td>
-        <td>
-          <span class='badge white-text green'>TC02Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="12"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC03_User cannot log into Railway with invalid password </p>
-            <p class="text-sm"><span>17:02:50 CH</span> / <span>1,395 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=12</span></div>
-<h5 class="test-status text-pass">TC03_User cannot log into Railway with invalid password </h5>
-<span class='badge badge-success'>07.15.2021 17:02:50</span>
-<span class='badge badge-danger'>07.15.2021 17:02:51</span>
-<span class='badge badge-default'>1,395 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:51</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:02:51</td>
+        <td>15:36:50</td>
         <td>
           <span class='badge white-text green'>TC03Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="fail" test-id="13"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar fail-bg">
-            <i class="fa fa-times text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC05_System shows message when user enters wrong password several times</p>
-            <p class="text-sm"><span>17:02:53 CH</span> / <span>3,845 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=13</span></div>
-<h5 class="test-status text-fail">TC05_System shows message when user enters wrong password several times</h5>
-<span class='badge badge-success'>07.15.2021 17:02:53</span>
-<span class='badge badge-danger'>07.15.2021 17:02:57</span>
-<span class='badge badge-default'>3,845 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:02:57</td>
-        <td>
-          <span class='badge white-text red'>TC05Test case failed</span>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log fail-bg">Fail</span></td>
-        <td>17:02:57</td>
-        <td>
-          <textarea readonly class="code-block">java.lang.AssertionError: error message not displayed as expected expected [You have used 4 out of 5 login attempts. After all 5 have been used, you will be unable to login for 15 minutes.] but found [Invalid username or password. Please try again.]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:453)
-	at Testcases.Railway.LoginTest.TC05(LoginTest.java:58)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
-	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
-</textarea>
-          
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="14"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC06_Additional pages display once user logged in</p>
-            <p class="text-sm"><span>17:02:59 CH</span> / <span>3,935 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=14</span></div>
-<h5 class="test-status text-pass">TC06_Additional pages display once user logged in</h5>
-<span class='badge badge-success'>07.15.2021 17:02:59</span>
-<span class='badge badge-danger'>07.15.2021 17:03:03</span>
-<span class='badge badge-default'>3,935 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:03:03</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:03:03</td>
-        <td>
-          <span class='badge white-text green'>TC06Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="15"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC09 - User can change password</p>
-            <p class="text-sm"><span>17:03:17 CH</span> / <span>4,791 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=15</span></div>
-<h5 class="test-status text-pass">TC09 - User can change password</h5>
-<span class='badge badge-success'>07.15.2021 17:03:17</span>
-<span class='badge badge-danger'>07.15.2021 17:03:22</span>
-<span class='badge badge-default'>4,791 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:03:22</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:03:22</td>
-        <td>
-          <span class='badge white-text green'>TC09Test case passed</span>
-        </td>
-      </tr>
-  </tbody>
-</table>
-</div>
-          </div>
-        </li>
-        <li class="test-item"  status="pass" test-id="16"
-          author=""
-          tag=""
-          device="">
-          <div class="status-avatar pass-bg">
-            <i class="fa fa-check text-white"></i>
-          </div>
-          <div class="test-detail">
-            <span class="meta text-white badge badge-sm"></span>
-            <p class="name">TC15 - User can open "Book ticket" page by clicking on "Book ticket" link in "Train timetable" page</p>
-            <p class="text-sm"><span>17:03:35 CH</span> / <span>5,066 secs</span></p>
-          </div>
-          <div class="test-contents d-none">
-<div class="detail-head">
-<div class="p-v-10">
-<div class="info">
-<div class='float-right'><span class='badge badge-default'>#test-id=16</span></div>
-<h5 class="test-status text-pass">TC15 - User can open "Book ticket" page by clicking on "Book ticket" link in "Train timetable" page</h5>
-<span class='badge badge-success'>07.15.2021 17:03:35</span>
-<span class='badge badge-danger'>07.15.2021 17:03:40</span>
-<span class='badge badge-default'>5,066 secs</span>
-</div>
-</div>
-</div><div class="detail-body mt-4">
-<table class="table table-sm">
-  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
-  <tbody>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:03:40</td>
-        <td>
-          Successful
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>17:03:40</td>
-        <td>
-          <span class='badge white-text green'>TC15Test case passed</span>
         </td>
       </tr>
   </tbody>
@@ -979,126 +221,30 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="test-wrapper row view exception-view attributes-view">
-<div class="test-list">
-<div class="test-list-tools">
-<ul class="tools pull-left">
-<li>
-<a href="">
-<span class="font-size-14">Exception</span>
-</a>
-</li>
-</ul>
-<ul class="tools text-right">
-<li>
-<a href="#">
-<span class="badge badge-primary">1</span>
-</a>
-</li>
-</ul>
-</div>
-<div class="test-list-wrapper scrollable">
-<ul class="test-list-item">
-<li class="test-item">
-<div class="open-test">
-<div class="test-detail">
-<p class="name">java.lang.AssertionError</p>
-<p class="duration text-sm">5 tests</p>
-</div>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>java.lang.AssertionError</h4>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>17:00:59 CH</td>
-<td>
-<a href="#" class="linked" test-id='1' id='1'>TC12 - Errors display when password reset token is blank</a>
-</td>
-</tr>
-<tr>
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>17:01:06 CH</td>
-<td>
-<a href="#" class="linked" test-id='2' id='2'>TC13 - Errors display if password and confirm password don't match when resetting password </a>
-</td>
-</tr>
-<tr>
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>17:01:43 CH</td>
-<td>
-<a href="#" class="linked" test-id='5' id='5'>TC07 - User can create new account</a>
-</td>
-</tr>
-<tr>
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>17:01:47 CH</td>
-<td>
-<a href="#" class="linked" test-id='6' id='6'>TC08 - User can't login with an account hasn't been activated</a>
-</td>
-</tr>
-<tr>
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>17:02:53 CH</td>
-<td>
-<a href="#" class="linked" test-id='13' id='13'>TC05_System shows message when user enters wrong password several times</a>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="test-content scrollable">
-<div class="test-content-tools">
-<ul>
-<li>
-<a class="back-to-test" href="javascript:void(0)">
-<i class="fa fa-arrow-left"></i>
-</a>
-</li>
-</ul>
-</div>
-<div class="test-content-detail">
-<div class="detail-body"></div>
-</div>
-</div>
-</div><div class="container-fluid p-4 view dashboard-view">
+<div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>thg 7 15, 2021 05:00:23 CH</h3>
+<h3>thg 7 16, 2021 03:34:46 CH</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>thg 7 15, 2021 05:03:45 CH</h3>
+<h3>thg 7 16, 2021 03:36:53 CH</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>11</h3>
+<h3>3</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>5</h3>
+<h3>0</h3>
 </div></div>
 </div>
 </div>
@@ -1114,12 +260,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='68%'>
-<b>11</b> tests passed
+<div><small data-tooltip='100%'>
+<b>3</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='31%'><b>5</b> tests failed,
+<small data-tooltip='0%'><b>0</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -1137,9 +283,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='68%'><b>22</b> events passed</small></div>
+<div><small data-tooltip='100%'><b>6</b> events passed</small></div>
 <div>
-<small data-tooltip='31%'><b>10</b> events failed,
+<small data-tooltip='0%'><b>0</b> events failed,
 <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -1167,8 +313,8 @@
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 11,
-failParent: 5,
+passParent: 3,
+failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -1184,8 +330,8 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 22,
-failEvents: 10,
+passEvents: 6,
+failEvents: 0,
 warningEvents: 0,
 skipEvents: 0,
 infoEvents: 0

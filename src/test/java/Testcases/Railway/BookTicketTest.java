@@ -22,7 +22,7 @@ public class BookTicketTest extends TestBase {
       Assert.assertTrue(loginPage.isAtLoginPage(),"Login page don't displayed");
     }
     @Test(description = "TC14 - User can book 1 ticket at a time")
-    public void TC14()  {
+    public void TC14() throws InterruptedException {
         generalPage.goToLoginPage();
         loginPage.login(Constant.USERNAME,Constant.PASSWORD);
         loginPage.goToBookTicket();

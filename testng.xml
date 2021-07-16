@@ -6,13 +6,7 @@
     </listeners>
     <test name="Test" >
         <classes>
-            <class name="Testcases.Railway.ForgotPasswordTest"></class>
-            <class name="Testcases.Railway.BookTicketTest"></class>
-            <class name="Testcases.Railway.RegisterPageTest"></class>
-            <class name="Testcases.Railway.MyTicketTest"></class>
-            <class name="Testcases.Railway.LoginTest"></class>
-            <class name="Testcases.Railway.ChangePasswordTest"></class>
-            <class name="Testcases.Railway.TimeTableTest"></class>
+            <class name="Testcases.FinalTest.FinalTest"></class>
         </classes>
     </test>
 </suite>

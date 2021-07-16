@@ -32,6 +32,17 @@ public class Utilities {
         result = result.replace("-","/");
         return result;
     }
+    public String getDate(int plusAmount){
+        SimpleDateFormat dateFormat = new SimpleDateFormat("M-d-yyyy");
+        Calendar c1 = Calendar.getInstance();
+        String today = java.time.LocalDate.now().toString();
+        Date date = Date.valueOf(today);
+        c1.setTime(date);
+        c1.roll(Calendar.DATE, 5+plusAmount);
+        String result =  dateFormat.format(c1.getTime());
+        result = result.replace("-","/");
+        return result;
+    }
     public static String GenRandomString() {
         int rdText;
         int rdNumber;
